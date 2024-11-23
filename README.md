@@ -1,4 +1,4 @@
-Open [https://anibal317.github.io/facturacion/dist](https://anibal317.github.io/facturacion/dist) Ver el Sitio.
+Open [./dist](./dist) Ver el Sitio.
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
