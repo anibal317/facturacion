@@ -1,0 +1,10 @@
+.whatsapp {
+    position: fixed;
+    text-decoration: none;
+    z-index: 2;
+  }
+  
+  .whatsapp-icon {
+    color: #25D366; /* Color verde de WhatsApp */
+    fill: white;
+  }
