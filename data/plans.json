@@ -1,0 +1,146 @@
+{
+    "plans": [
+        {
+            "id": "factura",
+            "isRecommended": false,
+            "title": "Facturador",
+            "subtitle": "Factura",
+            "originalPrice": 29000,
+            "discountedPrice": null,
+            "freeMonths": null,
+            "features": [
+                {
+                    "text": "200GB de almacenamiento SSD"
+                },
+                {
+                    "text": "Dominio",
+                    "savings": "$10.920",
+                    "hasInfo": true
+                },
+                {
+                    "text": "Cuentas de correo ILIMITADO"
+                },
+                {
+                    "text": "Certificado SSL",
+                    "savings": "$16.680",
+                    "hasInfo": true
+                },
+                {
+                    "text": "Soporte Premium 24/7",
+                    "isPremium": true
+                },
+                {
+                    "text": "Copia de seguridad diaria",
+                    "isPremium": true,
+                    "hasInfo": true
+                },
+                {
+                    "text": "WordPress Stage",
+                    "isPremium": true,
+                    "hasInfo": true
+                },
+                {
+                    "text": "WordPress a 1 click"
+                }
+            ]
+        },
+        {
+            "id": "comercios",
+            "isRecommended": false,
+            "title": "Control de Stock",
+            "subtitle": "Comercios",
+            "originalPrice": 45500,
+            "discountedPrice": null,
+            "discount": null,
+            "freeMonths": 4,
+            "features": [
+                {
+                    "text": "300GB de almacenamiento SSD"
+                },
+                {
+                    "text": "Dominio",
+                    "savings": "$10.920",
+                    "hasInfo": true
+                },
+                {
+                    "text": "Cuentas de correo ILIMITADO"
+                },
+                {
+                    "text": "Certificado SSL",
+                    "savings": "$16.680",
+                    "hasInfo": true
+                },
+                {
+                    "text": "Soporte Premium 24/7",
+                    "isPremium": true
+                },
+                {
+                    "text": "Copia de seguridad diaria",
+                    "isPremium": true,
+                    "hasInfo": true
+                },
+                {
+                    "text": "WordPress Stage",
+                    "isPremium": true,
+                    "hasInfo": true
+                },
+                {
+                    "text": "WordPress a 1 click"
+                },
+                {
+                    "text": "Tienda en línea",
+                    "isPremium": true
+                }
+            ]
+        },
+        {
+            "id": "Pro",
+            "isRecommended": true,
+            "title": "Control de Stock y Clientes",
+            "subtitle": "Comercios",
+            "originalPrice": 65000,
+            "discountedPrice": null,
+            "discount": null,
+            "freeMonths": 4,
+            "features": [
+                {
+                    "text": "300GB de almacenamiento SSD"
+                },
+                {
+                    "text": "Dominio",
+                    "savings": "$10.920",
+                    "hasInfo": true
+                },
+                {
+                    "text": "Cuentas de correo ILIMITADO"
+                },
+                {
+                    "text": "Certificado SSL",
+                    "savings": "$16.680",
+                    "hasInfo": true
+                },
+                {
+                    "text": "Soporte Premium 24/7",
+                    "isPremium": true
+                },
+                {
+                    "text": "Copia de seguridad diaria",
+                    "isPremium": true,
+                    "hasInfo": true
+                },
+                {
+                    "text": "WordPress Stage",
+                    "isPremium": true,
+                    "hasInfo": true
+                },
+                {
+                    "text": "WordPress a 1 click"
+                },
+                {
+                    "text": "Tienda en línea",
+                    "isPremium": true
+                }
+            ]
+        }
+    ]
+}

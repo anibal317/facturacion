@@ -1,11 +1,13 @@
 'use client'
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { CheckCircle, BarChart, Clock, DollarSign, ReceiptIcon } from "lucide-react"
+import plansData from "@/data/plans.json"
+import { PricingPlan } from "@/types/pricing"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { CheckCircle, BarChart, Clock, ReceiptIcon } from "lucide-react"
 
 import Link from "next/link";
 import Contacto from "./Contacto";
+import { PricingCard } from "@/components/pracingCard/pricing-card"
 
 export default function Home() {
   return (
@@ -81,55 +83,10 @@ export default function Home() {
           </div>
         </section>
         <section id="precios" className="w-full py-12 md:py-24 lg:py-32 flex justify-center items-center">
-          <div className="container px-4 md:px-6">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12">Planes de Precios</h2>
-            <div className="grid gap-6 lg:grid-cols-3 lg:gap-12">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Básico</CardTitle>
-                  <CardDescription>Para pequeños negocios</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="text-4xl font-bold mb-4">$19/mes</div>
-                  <ul className="space-y-2">
-                    <li className="flex items-center"><CheckCircle className="w-5 h-5 mr-2 text-green-500" /> Hasta 100 facturas/mes</li>
-                    <li className="flex items-center"><CheckCircle className="w-5 h-5 mr-2 text-green-500" /> Soporte por email</li>
-                    <li className="flex items-center"><CheckCircle className="w-5 h-5 mr-2 text-green-500" /> Informes básicos</li>
-                  </ul>
-                  <Button className="w-full mt-6">Elegir Plan</Button>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle>Pro</CardTitle>
-                  <CardDescription>Para negocios en crecimiento</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="text-4xl font-bold mb-4">$49/mes</div>
-                  <ul className="space-y-2">
-                    <li className="flex items-center"><CheckCircle className="w-5 h-5 mr-2 text-green-500" /> Facturas ilimitadas</li>
-                    <li className="flex items-center"><CheckCircle className="w-5 h-5 mr-2 text-green-500" /> Soporte prioritario</li>
-                    <li className="flex items-center"><CheckCircle className="w-5 h-5 mr-2 text-green-500" /> Informes avanzados</li>
-                  </ul>
-                  <Button className="w-full mt-6">Elegir Plan</Button>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle>Empresarial</CardTitle>
-                  <CardDescription>Para grandes empresas</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="text-4xl font-bold mb-4">$99/mes</div>
-                  <ul className="space-y-2">
-                    <li className="flex items-center"><CheckCircle className="w-5 h-5 mr-2 text-green-500" /> Facturas ilimitadas</li>
-                    <li className="flex items-center"><CheckCircle className="w-5 h-5 mr-2 text-green-500" /> Soporte 24/7</li>
-                    <li className="flex items-center"><CheckCircle className="w-5 h-5 mr-2 text-green-500" /> API personalizada</li>
-                  </ul>
-                  <Button className="w-full mt-6">Elegir Plan</Button>
-                </CardContent>
-              </Card>
-            </div>
+          <div className="flex flex-wrap gap-8 justify-center">
+            {plansData.plans.map((plan: PricingPlan) => (
+              <PricingCard key={plan.id} plan={plan} />
+            ))}
           </div>
         </section>
         <section id="contacto" className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800 flex justify-center items-center">
