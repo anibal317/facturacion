@@ -1,6 +1,7 @@
 'use client'
 import { Button } from "@/components/ui/button"
 import plansData from "@/data/plans.json"
+import navLinks from "@/data/navigation.json"
 import { PricingPlan } from "@/types/pricing"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { CheckCircle, BarChart, Clock, ReceiptIcon } from "lucide-react"
@@ -8,6 +9,7 @@ import { CheckCircle, BarChart, Clock, ReceiptIcon } from "lucide-react"
 import Link from "next/link";
 import Contacto from "./Contacto";
 import { PricingCard } from "@/components/pracingCard/pricing-card"
+import { Navigation } from "@/components/navBar/Navigation"
 
 export default function Home() {
   return (
@@ -18,15 +20,7 @@ export default function Home() {
           <span className="sr-only">FacturaFácil</span>
         </Link>
         <nav className="ml-auto flex gap-4 sm:gap-6 ">
-          <Link className="text-sm font-medium hover:underline underline-offset-4" href="#caracteristicas">
-            Características
-          </Link>
-          <Link className="text-sm font-medium hover:underline underline-offset-4" href="#precios">
-            Precios
-          </Link>
-          <Link className="text-sm font-medium hover:underline underline-offset-4" href="#contacto">
-            Contacto
-          </Link>
+          <Navigation data={navLinks}/>
         </nav>
       </header>
       <main className="flex flex-col min-w-screen">

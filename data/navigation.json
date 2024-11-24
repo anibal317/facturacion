@@ -1,0 +1,49 @@
+{
+
+    "mainLinks": [
+      {
+        "text": "Características",
+        "href": "#caracteristicas"
+      },
+      {
+        "text": "Precios",
+        "href": "#precios"
+      },
+      {
+        "text": "Contacto",
+        "href": "#contacto"
+      },
+      {
+        "text": "Clientes",
+        "href": "/clientes"
+      },
+      {
+        "text": "Productos",
+        "href": "/productos"
+      },
+      {
+        "text": "Proveedores",
+        "href": "/proveedores"
+      },
+      {
+        "text": "Bancos",
+        "href": "/bancos"
+      }
+    ],
+    "dropdownLinks": [
+      {
+        "text": "Ayuda",
+        "href": "/ayuda"
+      },
+      {
+        "text": "Blog",
+        "href": "/blog"
+      },
+      {
+        "text": "Soporte",
+        "href": "/soporte"
+      }
+    ]
+  }
+  
+  
