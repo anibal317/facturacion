@@ -11,11 +11,11 @@
     },
     {
       "text": "Precios",
-      "href": "#precios"
+      "href": "/#precios"
     },
     {
       "text": "Contacto",
-      "href": "#contacto"
+      "href": "/#contacto"
     },
     {
       "text": "Preguntas Frecuentes",
@@ -24,15 +24,8 @@
     {
       "text": "Productos",
       "href": "/productos"
-    },
-    {
-      "text": "Proveedores",
-      "href": "/proveedores"
-    },
-    {
-      "text": "Bancos",
-      "href": "/bancos"
     }
+
   ],
   "dropdownLinks": [
     {
