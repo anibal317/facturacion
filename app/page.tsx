@@ -1,10 +1,11 @@
+'use client'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { CheckCircle, BarChart, Clock, DollarSign, ReceiptIcon } from "lucide-react"
 
-import Image from "next/image";
 import Link from "next/link";
+import Contacto from "./Contacto";
 
 export default function Home() {
   return (
@@ -132,21 +133,7 @@ export default function Home() {
           </div>
         </section>
         <section id="contacto" className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800 flex justify-center items-center">
-          <div className="container px-4 md:px-6">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12">Contáctanos</h2>
-            <div className="mx-auto max-w-lg">
-              <form className="space-y-4">
-                <Input placeholder="Nombre" />
-                <Input type="email" placeholder="Email" />
-                <Input type="tel" placeholder="Teléfono" />
-                <textarea
-                  className="w-full h-32 px-3 py-2 text-base text-gray-700 placeholder-gray-400 border rounded-lg focus:shadow-outline"
-                  placeholder="Mensaje"
-                ></textarea>
-                <Button className="w-full">Enviar Mensaje</Button>
-              </form>
-            </div>
-          </div>
+          <Contacto />
         </section>
       </main>
       <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
