@@ -22,10 +22,11 @@ const CardHeader = React.forwardRef<
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
   <div
-    ref={ref}
-    className={cn("flex flex-col space-y-1.5 p-6", className)}
-    {...props}
+  ref={ref}
+  className={cn("flex flex-col space-y-1.5 p-6", className)}
+  {...props}
   />
+  
 ));
 CardHeader.displayName = "CardHeader";
 
@@ -35,9 +36,10 @@ const CardTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn("font-semibold leading-none tracking-tight", className)}
+    className={cn("font-semibold leading-none tracking-tight bg-gray-200 p-2 rounded-sm ml-[-20px]", className)}
     {...props}
-  />
+    />
+    
 ));
 CardTitle.displayName = "CardTitle";
 
@@ -47,7 +49,7 @@ const CardDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn("text-sm text-neutral-500 dark:text-neutral-400 ", className)}
+    className={cn("text-sm text-neutral-500 dark:text-neutral-400", className)}
     {...props}
   />
 ));
@@ -57,7 +59,7 @@ const CardContent = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
-  <div ref={ref} className={cn("p-6 pt-0", className)} {...props} />
+  <div ref={ref} className={cn("p-6 pt-0 bg-slate-200 rounded-sm", className)} {...props} />
 ));
 CardContent.displayName = "CardContent";
 
@@ -77,6 +79,7 @@ CardFooter.displayName = "CardFooter";
 const renderItems = (items: any) => {
   if (Array.isArray(items)) {
     return (
+      
       <ul className="pl-6 list-disc">
         {items.map((item, index) => (
           <li key={index}>
@@ -105,7 +108,7 @@ const CardFromJson = ({ data }: { data: any }) => {
       {Object.entries(data).map(([key, value]: [string, any]) => (
         <Card key={key}>
           <CardHeader>
-            <CardTitle>{key}</CardTitle>
+            <CardTitle> {key} </CardTitle>
             {value.description && (
               <CardDescription>{value.description}</CardDescription>
             )}

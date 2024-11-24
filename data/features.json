@@ -47,6 +47,7 @@
     ]
   },
   "Proveedores": {
+    "description": "",
     "items": [
       "Actualizacion de proveedores",
       "Cargar factura de compra",
@@ -59,11 +60,13 @@
     ]
   },
   "Bancos": {
+    "description": "",
     "items": [
       "Listado de cheques"
     ]
   },
   "Presupuestos": {
+    "description": "",
     "items": [
       "Nuevo presupuesto",
       "Generar orden desde presupuesto",
@@ -71,6 +74,7 @@
     ]
   },
   "Orden de compras": {
+    "description": "",
     "items": [
       "Nueva orden de compra",
       "Devolucion de productos no facrurados",
@@ -83,6 +87,7 @@
     ]
   },
   "Facturación": {
+    "description": "",
     "items": [
       "Facturacion",
       "Nota de credito",
@@ -94,6 +99,7 @@
     ]
   },
   "Caja": {
+    "description": "",
     "items": [
       "Iniciar caja",
       "Cerrar caja",
@@ -104,6 +110,7 @@
     ]
   },
   "Caja General": {
+    "description": "",
     "items": [
       "Detalle de caja"
     ]
@@ -126,7 +133,6 @@
   },
   "Vendedores": {
     "description": "Gestor de Vendedores",
-
     "items": [
       "Actualizar vendedores",
       "Calcular comision"
