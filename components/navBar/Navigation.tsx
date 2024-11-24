@@ -2,12 +2,13 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { ReceiptIcon, ChevronDown } from 'lucide-react'
 import { NavigationData, NavLink } from '../../types/navigation'
+import data from "@/data/navigation.json"
 
 interface NavigationProps {
   data: NavigationData;
 }
 
-export function Navigation({ data }: NavigationProps) {
+export function Navigation() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
 
   const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen)
@@ -20,10 +21,10 @@ export function Navigation({ data }: NavigationProps) {
 
   return (
     <header className="px-4 lg:px-6 h-14 flex items-center">
-      {/* <Link className="flex items-center justify-center" href={data.logo.href}>
+      <Link className="flex items-center justify-center" href={data.logo.href}>
         <ReceiptIcon className="h-6 w-6" />
         <span className="sr-only">{data.logo.text}</span>
-      </Link> */}
+      </Link>
       <nav className="ml-auto flex gap-4 sm:gap-6 items-center">
         {data.mainLinks.map(renderNavLink)}
         <div className="relative">

@@ -1,0 +1,172 @@
+{
+  "Clientes": {
+    "description": "Actualización de clientes. En esta sección podemos gestionar los clientes y realizar acciones como agregar, modificar y eliminar.",
+    "items": [
+      "Zonas",
+      "Categorías de clientes",
+      "Devolución",
+      {
+        "Cuenta corriente": [
+          "Detalle de cuenta corriente",
+          "Actualizar cuenta corriente por zona",
+          "Listado de cuenta corriente por zona",
+          "Bloquear Clientes deudores"
+        ]
+      },
+      {
+        "Saldos": [
+          "Listado de saldos general",
+          "Listado de saldos en ordenes de compra"
+        ]
+      }
+    ]
+  },
+  "Productos": {
+    "description": "Gestión de productos, precios y stock.",
+    "items": [
+      "Actualización de productos",
+      "Buscar precio de productos",
+      "Grupos",
+      "Actualizacion de precio por proveedor",
+      "Actualizacion de existencia por proveedor",
+      {
+        "Listas de precios": [
+          "Establecer orden de grupos en la lista",
+          "Generar lista de precios",
+          "Generar lista de precio con stock"
+        ]
+      },
+      {
+        "Importación": [
+          "Importar productos desde base excel",
+          "Importar productos con precio y stock desde base excel",
+          "Actualizar precio y descripcion desde base excel"
+        ]
+      },
+      "Stock crítico"
+    ]
+  },
+  "Proveedores": {
+    "items": [
+      "Actualizacion de proveedores",
+      "Cargar factura de compra",
+      "Cargar nota de credito",
+      "cargar nota de debito",
+      "cuenta corriente",
+      "Retencion de ganancias",
+      "Historial de facturas por proveedor",
+      "Facturas por vender"
+    ]
+  },
+  "Bancos": {
+    "items": [
+      "Listado de cheques"
+    ]
+  },
+  "Presupuestos": {
+    "items": [
+      "Nuevo presupuesto",
+      "Generar orden desde presupuesto",
+      "Cambiar cliente de presupuesto"
+    ]
+  },
+  "Orden de compras": {
+    "items": [
+      "Nueva orden de compra",
+      "Devolucion de productos no facrurados",
+      "Generar factura desde orden",
+      "Imprimir factura de orden",
+      "imprimir factura de orden al costo",
+      "unificar orden de compra",
+      "cambiar cliente de orden de compra",
+      "Historial de órdenes de compra"
+    ]
+  },
+  "Facturación": {
+    "items": [
+      "Facturacion",
+      "Nota de credito",
+      "Nota de debito",
+      "Re impresion de comprobantes",
+      "LIstado de facturas",
+      "Facturacion por punto de venta",
+      "Proforma"
+    ]
+  },
+  "Caja": {
+    "items": [
+      "Iniciar caja",
+      "Cerrar caja",
+      "Ingresar dinero en caja",
+      "Retirar dinero de caja",
+      "Detalle de caja actual",
+      "Listado de cajas por fecha"
+    ]
+  },
+  "Caja General": {
+    "items": [
+      "Detalle de caja"
+    ]
+  },
+  "Libro de iva": {
+    "description": "Manejo de IVA",
+    "items": [
+      "Compras",
+      "Ventas",
+      "Diferencia de IVA"
+    ]
+  },
+  "Control de gastos": {
+    "description": "Control de Gastos internos",
+    "items": [
+      "Cargar gasto",
+      "Cargar tipo de gasto",
+      "Cargar facturas de gasto"
+    ]
+  },
+  "Vendedores": {
+    "description": "Gestor de Vendedores",
+
+    "items": [
+      "Actualizar vendedores",
+      "Calcular comision"
+    ]
+  },
+  "Estadisticas": {
+    "description": "Modulo de estadisticas barias",
+    "items": [
+      "Facturacion",
+      "Ventas totales",
+      "Facturacion BN",
+      "Entradas/Salidas",
+      {
+        "Balance": [
+          "Grafico 1",
+          "Grafico 2",
+          "Balance Mes"
+        ]
+      },
+      {
+        "Ventas": [
+          "Ventas por cliente (Facturacion total)",
+          "Ventas por cliente (cantidad de producto)",
+          "Ventas por producto puntual",
+          "Ventas (cobrado/sin cobrar)"
+        ]
+      },
+      {
+        "Productos": [
+          "Trazabilidad del stock de producto",
+          "Clasificacion ABC 1",
+          "Clasificacion ABC",
+          "Capital en pesos"
+        ]
+      },
+      {
+        "Proveedor": [
+          "Proveedor - Grupo - Vendedor"
+        ]
+      }
+    ]
+  }
+}
