@@ -7,13 +7,10 @@ import { CheckCircle, BarChart, Clock, ReceiptIcon } from "lucide-react"
 
 import Contacto from "./Contacto";
 import { PricingCard } from "@/components/pracingCard/pricing-card"
-import { Navigation } from "@/components/navBar/Navigation"
-import Footer from "@/components/footer/Footer"
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
-      <Navigation />
       <span className="sr-only">FacturaFácil</span>
       <main className="flex flex-col min-w-screen">
         <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 flex justify-center items-center">
@@ -94,7 +91,6 @@ export default function Home() {
           <Contacto />
         </section>
       </main>
-      <Footer />
     </div>
   )
 }

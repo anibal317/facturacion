@@ -1,0 +1,12 @@
+import Contacto from '@/app/Contacto';
+import styles from './styles.module.css';
+export default function UnderConstruction() {
+    return (
+        <div className={styles.img}>
+            <div className="text-white mt-[40rem] ml-[55rem]">
+                <a href='/contact.html'>Contactenos</a>
+            </div>
+        </div>
+
+    );
+}
