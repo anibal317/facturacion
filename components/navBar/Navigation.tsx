@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { useState } from 'react'
 import { ReceiptIcon, ChevronDown, Menu, X } from 'lucide-react'
-import { NavigationData, NavLink } from '../../types/navigation'
+import { NavLink } from '../../types/navigation'
 import data from "@/data/navigation.json"
 
 export function Navigation() {
@@ -24,8 +24,10 @@ export function Navigation() {
 
   return (
     <header className="px-4 lg:px-6 h-14 flex items-center bg-[#4e637c] text-[#fff]">
-      <Link className="flex items-center justify-center" href={data.logo.href}>
-        <ReceiptIcon className="h-6 w-6" />
+     <Link className="flex items-center justify-center" href={data.logo.href}>
+        {/* Assuming data.logo.icon is a string representing the image path */}
+        <img src={data.logo.icon} alt={data.logo.text} className="h-10 w-12" />
+        {/* <ReceiptIcon className="h-6 w-6" />  // Remove if using an image */}
         <span className="sr-only">{data.logo.text}</span>
       </Link>
       

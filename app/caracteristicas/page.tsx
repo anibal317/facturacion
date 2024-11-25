@@ -32,12 +32,12 @@ const Page: React.FC = () => {
     }
 
     return (
-        <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4 h-auto w-screen ml-[10%] mt-[5%]">
+        <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
             {Object.entries(data).map(([section, details]) => (
                 <Card key={section}>
 
                     <CardHeader>
-                        <CardTitle>                                {section}                                </CardTitle>
+                        <CardTitle>{section}</CardTitle>
                         <CardDescription>{details.description}</CardDescription>
                     </CardHeader>
                     <CardContent>
