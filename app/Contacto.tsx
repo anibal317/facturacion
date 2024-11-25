@@ -86,7 +86,7 @@ export default function Contacto() {
 
   return (
     <>
-      <div className="bg-[#FFFFFF] w-screen h-auto rounded-[25px] flex flex-col justify-center items-center p-2">
+      <div id="contacto" className="bg-[#a0aab6] h-screen flex flex-col justify-center items-center p-2">
         <p>Hora de atención por consultas de 13hs a 17hs</p>
         <div className="bg-[#FFFFFF] w-[50%] h-[40%] rounded-[25px]">
           <div className="flex flex-col-reverse lg:flex-row">

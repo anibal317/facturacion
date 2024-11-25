@@ -32,43 +32,39 @@ const Page: React.FC = () => {
     }
 
     return (
-        <>
-            <Navigation />
-            <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4 w-[100rem] ml-[10%] mt-[5%]">
-                {Object.entries(data).map(([section, details]) => (
-                    <Card key={section}>
+        <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4 h-auto w-screen ml-[10%] mt-[5%]">
+            {Object.entries(data).map(([section, details]) => (
+                <Card key={section}>
 
-                        <CardHeader>
-                            <CardTitle>                                {section}                                </CardTitle>
-                            <CardDescription>{details.description}</CardDescription>
-                        </CardHeader>
-                        <CardContent>
-                            <ul className="space-y-2  list-disc">
-                                {details.items.map((item, index) => (
-                                    <li key={index}>
-                                        {typeof item === "string" ? (
-                                            item
-                                        ) : (
-                                            Object.entries(item).map(([subSection, subItems]) => (
-                                                <div key={subSection} className="mt-2">
-                                                    <strong>{subSection}</strong>
-                                                    <ul className="ml-4 list-disc">
-                                                        {subItems.map((subItem: string, subIndex: string) => (
-                                                            <li key={subIndex}>{subItem}</li>
-                                                        ))}
-                                                    </ul>
-                                                </div>
-                                            ))
-                                        )}
-                                    </li>
-                                ))}
-                            </ul>
-                        </CardContent>
-                    </Card>
-                ))}
-            </div>
-            <Footer />
-        </>
+                    <CardHeader>
+                        <CardTitle>                                {section}                                </CardTitle>
+                        <CardDescription>{details.description}</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                        <ul className="space-y-2  list-disc">
+                            {details.items.map((item, index) => (
+                                <li key={index}>
+                                    {typeof item === "string" ? (
+                                        item
+                                    ) : (
+                                        Object.entries(item).map(([subSection, subItems]) => (
+                                            <div key={subSection} className="mt-2">
+                                                <strong>{subSection}</strong>
+                                                <ul className="ml-4 list-disc">
+                                                    {subItems.map((subItem: string, subIndex: string) => (
+                                                        <li key={subIndex}>{subItem}</li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                        ))
+                                    )}
+                                </li>
+                            ))}
+                        </ul>
+                    </CardContent>
+                </Card>
+            ))}
+        </div>
     );
 };
 

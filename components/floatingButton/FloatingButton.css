@@ -1,0 +1,30 @@
+.floating-button {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    /* background-color: #25d366; Color predeterminado, ej: verde WhatsApp */
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: black;
+    text-decoration: none;
+    z-index: 1000;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.floating-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.floating-button img {
+    width: 60%; /* Ajusta el tamaño del contenido del botón */
+    height: auto;
+}
+
+.floating-button button {
+    all: unset; /* Elimina estilos predeterminados del botón */
+}

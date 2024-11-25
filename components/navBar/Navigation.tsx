@@ -1,31 +1,45 @@
 import Link from 'next/link'
 import { useState } from 'react'
-import { ReceiptIcon, ChevronDown } from 'lucide-react'
+import { ReceiptIcon, ChevronDown, Menu, X } from 'lucide-react'
 import { NavigationData, NavLink } from '../../types/navigation'
 import data from "@/data/navigation.json"
 
-interface NavigationProps {
-  data: NavigationData;
-}
-
 export function Navigation() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen)
+  const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen)
 
   const renderNavLink = (link: NavLink) => (
-    <Link key={link.href} className="text-sm font-medium hover:underline underline-offset-4" href={link.href}>
+    <Link 
+      key={link.href} 
+      className="text-sm font-medium hover:underline underline-offset-4" 
+      href={link.href}
+      onClick={() => setIsMobileMenuOpen(false)}
+    >
       {link.text}
     </Link>
   )
 
   return (
-    <header className="px-4 lg:px-6 h-14 flex items-center">
+    <header className="px-4 lg:px-6 h-14 flex items-center bg-[#4e637c] text-[#fff]">
       <Link className="flex items-center justify-center" href={data.logo.href}>
         <ReceiptIcon className="h-6 w-6" />
         <span className="sr-only">{data.logo.text}</span>
       </Link>
-      <nav className="ml-auto flex gap-4 sm:gap-6 items-center">
+      
+      {/* Mobile menu button */}
+      <button
+        className="ml-auto md:hidden"
+        onClick={toggleMobileMenu}
+        aria-label="Toggle menu"
+      >
+        {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+      </button>
+
+      {/* Desktop navigation */}
+      <nav className="hidden md:flex ml-auto gap-4 items-center">
         {data.mainLinks.map(renderNavLink)}
         <div className="relative">
           <button
@@ -49,6 +63,16 @@ export function Navigation() {
           )}
         </div>
       </nav>
+
+      {/* Mobile navigation */}
+      {isMobileMenuOpen && (
+        <div className="absolute top-14 left-0 right-0 bg-[#4e637c] z-20 md:hidden">
+          <nav className="flex flex-col items-center py-4">
+            {data.mainLinks.map(renderNavLink)}
+            {data.dropdownLinks.map(renderNavLink)}
+          </nav>
+        </div>
+      )}
     </header>
   )
 }

@@ -5,7 +5,7 @@ const firaCode = Fira_Code({ subsets: ['latin'] })
 
 export default function UnderConstruction() {
   return (
-    <div className="min-h-screen bg-[#a8e6d5] flex items-center justify-center p-4">
+    <div className="bg-[#72a9e8] flex items-center justify-center p-4 lg:h-[86.8vh] md:h-[85.5vh] sm:h-[85.5vh] h-[82.5vh]">
       <div className="max-w-2xl w-full bg-white/90 backdrop-blur-sm rounded-lg shadow-lg">
         <div className="p-6 flex flex-col items-center text-center space-y-6">
           <span className="bg-[#ff9d9d] text-white px-4 py-1 rounded-full text-sm font-semibold">

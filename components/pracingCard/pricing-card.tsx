@@ -7,7 +7,7 @@ interface PricingCardProps {
 
 export function PricingCard({ plan }: PricingCardProps) {
   return (
-    <div className="w-[300px] rounded-lg border-2 border-blue-600 bg-white overflow-hidden">
+    <div className="w-[300px] rounded-lg border-2 border-blue-600 overflow-hidden bg-white">
       {plan.isRecommended && (
         <div className="bg-[#FF5C00] text-white px-4 py-1 flex items-center justify-between">
           <span className="font-semibold">MÁS ELEGIDO</span>
