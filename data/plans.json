@@ -15,15 +15,17 @@
                 {
                     "text": "Dominio",
                     "savings": "$10.920",
-                    "hasInfo": true
+                    "hasInfo": false
                 },
                 {
-                    "text": "Cuentas de correo ILIMITADO"
+                    "text": "Cuentas de correo ILIMITADO",
+                    "savings": false,
+                    "hasInfo": false
                 },
                 {
                     "text": "Certificado SSL",
                     "savings": "$16.680",
-                    "hasInfo": true
+                    "hasInfo": false
                 },
                 {
                     "text": "Soporte Premium 24/7",
@@ -32,12 +34,12 @@
                 {
                     "text": "Copia de seguridad diaria",
                     "isPremium": true,
-                    "hasInfo": true
+                    "hasInfo": false
                 },
                 {
                     "text": "WordPress Stage",
                     "isPremium": true,
-                    "hasInfo": true
+                    "hasInfo": false
                 },
                 {
                     "text": "WordPress a 1 click"
@@ -60,7 +62,7 @@
                 {
                     "text": "Dominio",
                     "savings": "$10.920",
-                    "hasInfo": true
+                    "hasInfo": false
                 },
                 {
                     "text": "Cuentas de correo ILIMITADO"
@@ -68,7 +70,7 @@
                 {
                     "text": "Certificado SSL",
                     "savings": "$16.680",
-                    "hasInfo": true
+                    "hasInfo": false
                 },
                 {
                     "text": "Soporte Premium 24/7",
@@ -77,12 +79,12 @@
                 {
                     "text": "Copia de seguridad diaria",
                     "isPremium": true,
-                    "hasInfo": true
+                    "hasInfo": false
                 },
                 {
                     "text": "WordPress Stage",
                     "isPremium": true,
-                    "hasInfo": true
+                    "hasInfo": false
                 },
                 {
                     "text": "WordPress a 1 click"
@@ -109,7 +111,7 @@
                 {
                     "text": "Dominio",
                     "savings": "$10.920",
-                    "hasInfo": true
+                    "hasInfo": false
                 },
                 {
                     "text": "Cuentas de correo ILIMITADO"
@@ -117,28 +119,28 @@
                 {
                     "text": "Certificado SSL",
                     "savings": "$16.680",
-                    "hasInfo": true
+                    "hasInfo": false
                 },
                 {
                     "text": "Soporte Premium 24/7",
-                    "isPremium": true
+                    "isPremium": false
                 },
                 {
                     "text": "Copia de seguridad diaria",
-                    "isPremium": true,
-                    "hasInfo": true
+                    "isPremium": false,
+                    "hasInfo": false
                 },
                 {
                     "text": "WordPress Stage",
-                    "isPremium": true,
-                    "hasInfo": true
+                    "isPremium": false,
+                    "hasInfo": false
                 },
                 {
                     "text": "WordPress a 1 click"
                 },
                 {
                     "text": "Tienda en línea",
-                    "isPremium": true
+                    "isPremium": false
                 }
             ]
         }
