@@ -52,7 +52,7 @@
             "originalPrice": 45500,
             "discountedPrice": null,
             "discount": null,
-            "freeMonths": 4,
+            "freeMonths": null,
             "features": [
                 {
                     "text": "300GB de almacenamiento SSD"
@@ -101,7 +101,7 @@
             "originalPrice": 65000,
             "discountedPrice": null,
             "discount": null,
-            "freeMonths": 4,
+            "freeMonths": null,
             "features": [
                 {
                     "text": "300GB de almacenamiento SSD"

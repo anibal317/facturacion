@@ -23,7 +23,7 @@ export function Navigation() {
   )
 
   return (
-    <header className="px-4 lg:px-6 h-14 flex items-center bg-[#4e637c] text-[#fff]">
+    <header className="px-4 w-screen lg:px-6 h-14 flex items-center bg-[#4e637c] text-[#fff] fixed">
      <Link className="flex items-center justify-center" href={data.logo.href}>
         {/* Assuming data.logo.icon is a string representing the image path */}
         <img src={data.logo.icon} alt={data.logo.text} className="h-10 w-12" />
