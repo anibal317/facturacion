@@ -7,38 +7,42 @@
   "mainLinks": [
     {
       "text": "Características",
-      "href": "/caracteristicas"
+      "href": "/caracteristicas",
+      "enabled": true
     },
     {
       "text": "Precios",
-      "href": "/#precios"
+      "href": "/#precios",
+      "enabled": true
     },
     {
       "text": "Contacto",
-      "href": "/#contacto"
+      "href": "/#contacto",
+      "enabled": true
     },
     {
       "text": "Preguntas Frecuentes",
-      "href": "/qa"
+      "href": "/qa",
+      "enabled": true
     },
-    {
-      "text": "Productos",
-      "href": "/productos"
-    }
-
-  ],
-  "dropdownLinks": [
     {
       "text": "Ayuda",
-      "href": "/help"
-    },
+      "href": "/help",
+      "enabled": true
+    }
+  ],
+  "dropdownEnabled": false,
+  "dropdownLinks": [
     {
       "text": "Blog",
-      "href": "/blog"
+      "href": "/blog",
+      "enabled": false
     },
     {
       "text": "Soporte",
-      "href": "/soporte"
+      "href": "/soporte",
+      "enabled": false
     }
   ]
 }
+

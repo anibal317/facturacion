@@ -7,8 +7,8 @@ import {
 
 export default function page() {
     return (
-        <div className="divide-y divide-dashed p-1 m-2 ml-[20%] w-[50%]">
-            <Accordion type="single" collapsible className="w-full">
+        <div className="divide-y divide-dashed w-full flex justify-center h-[92.9vh] items-center">
+            <Accordion type="single" collapsible className="w-3/4">
                 <AccordionItem value="item-1">
                     <AccordionTrigger>¿Qué es una factura electrónica?</AccordionTrigger>
                     <AccordionContent>Una Factura Electrónica es un comprobante digital en el que se reflejan las ventas de bienes y/o servicios a una persona o empresa.
