@@ -17,7 +17,7 @@ import features from "@/data/features.json";
 
 interface Section {
     description: string;
-    items: (string | Record<string, string[]>)[];
+    items: (string | Partial<Record<string, string[]>>)[]; // Usar Partial para permitir valores opcionales
 }
 
 interface Data {
@@ -54,7 +54,7 @@ const FeaturesAccordion: React.FC = () => {
                                                         <div key={subSection} className="mt-2">
                                                             <strong>{subSection}</strong>
                                                             <ul className="ml-4 list-disc">
-                                                                {subItems.map((subItem: string, subIndex: number) => (
+                                                                {subItems?.map((subItem, subIndex) => (
                                                                     <li key={subIndex}>{subItem}</li>
                                                                 ))}
                                                             </ul>
