@@ -85,28 +85,28 @@ export default function Contacto() {
 
 
   return (
-    <div id="contacto" className="bg-[#a0aab6] h-[90vh] flex flex-col justify-center items-center p-2 pt-6">
-      <div className="bg-[#FFFFFF] md:w-4/6 md:rounded-[25px] md:pt-10 md:pb-6 md:px-6 pt-2 ">
-        <p className="text-center md:pb-4 font-semibold md:text-xl text-xs ">Horario de atención por consultas de 13hs a 17hs</p>
-        <div className="flex flex-col-reverse lg:flex-row">
+    <div id="contacto" className="flex flex-col justify-center items-center bg-[#a0aab6] p-2 pt-6 h-[70vh]">
+      <div className="bg-[#FFFFFF] md:px-6 pt-2 md:pt-10 md:pb-6 md:rounded-[25px] md:w-4/6">
+        <p className="md:pb-4 font-semibold text-center text-xs md:text-xl">Horario de atención por consultas de 13hs a 17hs</p>
+        <div className="flex lg:flex-row flex-col-reverse">
           <div>
           </div>
-          <div id="dialogo" className="bg-[#EFEFEF] p-6 lg:w-1/2 md:rounded-[15px] lg:rounded-[25px] md:mt-2 lg:mt-0 lg:mr-2">
+          <div id="dialogo" className="bg-[#EFEFEF] md:mt-2 lg:mt-0 lg:mr-2 p-6 md:rounded-[15px] lg:rounded-[25px] lg:w-1/2">
             {!isSend ? <>
-              <h1 className="text-3xl font-bold mb-4 arima text-[#1E1E1E]">
+              <h1 className="mb-4 font-bold text-[#1E1E1E] text-3xl arima">
                 Contacto
               </h1>
-              <p id="parrafoContac" className="mb-4 text-l catamaran text-[#1E1E1E]">
+              <p id="parrafoContac" className="mb-4 text-[#1E1E1E] text-l catamaran">
                 Dejanos tu mensaje y a la brevedad nos contactaremos contigo.
               </p>
               <form
                 id="formContacto"
-                className="space-y-4 catamaran text-[#9A9A9A]"
+                className="space-y-4 text-[#9A9A9A] catamaran"
                 onSubmit={handleSubmit}
               >
                 <div className="mb-4">
                   <input
-                    className="border rounded-xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    className="focus:shadow-outline px-3 py-2 border rounded-xl w-full text-gray-700 leading-tight focus:outline-none"
                     id="nombre"
                     type="text"
                     name="nombre"
@@ -118,7 +118,7 @@ export default function Contacto() {
                 </div>
                 <div className="mb-4">
                   <input
-                    className="border rounded-xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    className="focus:shadow-outline px-3 py-2 border rounded-xl w-full text-gray-700 leading-tight focus:outline-none"
                     id="apellido"
                     type="text"
                     name="apellido"
@@ -130,7 +130,7 @@ export default function Contacto() {
                 </div>
                 <div className="mb-4">
                   <input
-                    className="border rounded-xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    className="focus:shadow-outline px-3 py-2 border rounded-xl w-full text-gray-700 leading-tight focus:outline-none"
                     id="email"
                     type="email"
                     name="email"
@@ -146,7 +146,7 @@ export default function Contacto() {
                     name="descripcion"
                     placeholder="Escribí tu consulta"
                     required
-                    className="h-32 border rounded-xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    className="focus:shadow-outline px-3 py-2 border rounded-xl w-full h-32 text-gray-700 leading-tight focus:outline-none"
                     value={descripcion}
                     onChange={(e) => setDescripcion(e.target.value)}
                   />
@@ -163,11 +163,11 @@ export default function Contacto() {
               </form>
             </> :
               <>
-                <div className="lg:h-[20%] flex flex-col items-center justify-center gap-3">
-                  <img src="/imgs/contacto/check-circle.png" alt="Check" className="w-auto " />
-                  <span className="arima text-3xl lg:text-4xl font-semibold text-center">¡Muchas gracias!</span>
-                  <p className="catamaran text-lg lg:text-xl w-5/6 text-center">Recibimos tu consulta. Nos contactaremos a la brevedad.</p>
-                  <p className="catamaran text-lg lg:text-xl w-5/6 font-semibold text-center">¡Gracias por escribirnos!</p>
+                <div className="flex flex-col justify-center items-center gap-3 lg:h-[20%]">
+                  <img src="/imgs/contacto/check-circle.png" alt="Check" className="w-auto" />
+                  <span className="font-semibold text-3xl text-center lg:text-4xl arima">¡Muchas gracias!</span>
+                  <p className="w-5/6 text-center text-lg lg:text-xl catamaran">Recibimos tu consulta. Nos contactaremos a la brevedad.</p>
+                  <p className="w-5/6 font-semibold text-center text-lg lg:text-xl catamaran">¡Gracias por escribirnos!</p>
                 </div>
               </>
             }

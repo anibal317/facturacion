@@ -2,7 +2,7 @@ import UnderConstruction from "@/components/underConstruction/under-construction
 
 export default function page() {
     return (
-        <article className="h-[92.9vh]">
+        <article className="h-[calc(100vh-230px)]">
             <UnderConstruction/>
         </article>
     )

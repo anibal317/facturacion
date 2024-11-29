@@ -7,7 +7,7 @@ import {
 
 export default function page() {
     return (
-        <div className="divide-y divide-dashed w-full flex justify-center h-[92.9vh] items-center">
+        <div className="flex justify-center items-center divide-y divide-dashed w-full h-[69.7vh]">
             <Accordion type="single" collapsible className="w-3/4">
                 <AccordionItem value="item-1">
                     <AccordionTrigger>¿Qué es una factura electrónica?</AccordionTrigger>

@@ -30,7 +30,7 @@ const FeaturesAccordion: React.FC = () => {
     const midpoint = Math.ceil(entries.length / 2);
 
     const renderAccordionColumn = (columnEntries: [string, Section][]) => (
-        <div className="w-full h-[80.3vh]">
+        <div className="w-full h-[calc(82.2vh-230px)]">
             <Accordion type="single" collapsible className="w-full">
                 {columnEntries.map(([section, details], index) => (
                     <AccordionItem key={section} value={`item-${index + 1}`}>

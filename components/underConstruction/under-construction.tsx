@@ -5,9 +5,9 @@ const firaCode = Fira_Code({ subsets: ['latin'] })
 
 export default function UnderConstruction() {
   return (
-    <div className="flex justify-center items-center bg-[#72a9e8] p-4 sm:h-[85.5vh] md:h-[85.5vh] lg:h-screen">
-      <div className="bg-white/90 shadow-lg backdrop-blur-sm rounded-lg w-full max-w-2xl">
-        <div className="flex flex-col items-center space-y-6 p-6 text-center">
+    <div className="flex justify-center items-center bg-[#72a9e8] h-[800px]">
+      <div className="bg-white/90 shadow-lg backdrop-blur-sm rounded-lg w-full max-w-xl">
+        <div className="flex flex-col items-center space-y-4 p-4 text-center">
           <span className="bg-[#ff9d9d] px-4 py-1 rounded-full font-semibold text-sm text-white">
             Sitio en Desarrollo
           </span>
@@ -22,7 +22,7 @@ export default function UnderConstruction() {
             />
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-6">
             <h1 className="font-bold text-[#2d3748] text-3xl md:text-4xl">
               Sitio En Construcción
             </h1>
