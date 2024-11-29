@@ -30,11 +30,11 @@ const FeaturesAccordion: React.FC = () => {
     const midpoint = Math.ceil(entries.length / 2);
 
     const renderAccordionColumn = (columnEntries: [string, Section][]) => (
-        <div className="w-full">
+        <div className="w-full h-[80.3vh]">
             <Accordion type="single" collapsible className="w-full">
                 {columnEntries.map(([section, details], index) => (
                     <AccordionItem key={section} value={`item-${index + 1}`}>
-                        <AccordionTrigger className="text-lg font-semibold">
+                        <AccordionTrigger className="font-semibold text-lg">
                             {section}
                         </AccordionTrigger>
                         <AccordionContent>
@@ -74,8 +74,8 @@ const FeaturesAccordion: React.FC = () => {
     );
 
     return (
-        <div className="w-full max-w-7xl mx-auto pt-24 pb-5 px-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="mx-auto px-4 pt-24 pb-5 w-full max-w-7xl">
+            <div className="gap-8 grid grid-cols-1 md:grid-cols-2">
                 {renderAccordionColumn(entries.slice(0, midpoint))}
                 {renderAccordionColumn(entries.slice(midpoint))}
             </div>

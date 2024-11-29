@@ -5,14 +5,14 @@ const firaCode = Fira_Code({ subsets: ['latin'] })
 
 export default function UnderConstruction() {
   return (
-    <div className="bg-[#72a9e8] flex items-center justify-center p-4 lg:h-[86.8vh] md:h-[85.5vh] sm:h-[85.5vh] h-[82.5vh]">
-      <div className="max-w-2xl w-full bg-white/90 backdrop-blur-sm rounded-lg shadow-lg">
-        <div className="p-6 flex flex-col items-center text-center space-y-6">
-          <span className="bg-[#ff9d9d] text-white px-4 py-1 rounded-full text-sm font-semibold">
+    <div className="flex justify-center items-center bg-[#72a9e8] p-4 sm:h-[85.5vh] md:h-[85.5vh] lg:h-screen">
+      <div className="bg-white/90 shadow-lg backdrop-blur-sm rounded-lg w-full max-w-2xl">
+        <div className="flex flex-col items-center space-y-6 p-6 text-center">
+          <span className="bg-[#ff9d9d] px-4 py-1 rounded-full font-semibold text-sm text-white">
             Sitio en Desarrollo
           </span>
           
-          <div className="relative w-64 h-64 md:w-80 md:h-80">
+          <div className="relative w-64 md:w-80 h-64 md:h-80">
             <Image
               src="../../UnderAle.webp"
               alt="Developer illustration"
@@ -23,7 +23,7 @@ export default function UnderConstruction() {
           </div>
 
           <div className="space-y-4">
-            <h1 className="text-3xl md:text-4xl font-bold text-[#2d3748]">
+            <h1 className="font-bold text-[#2d3748] text-3xl md:text-4xl">
               Sitio En Construcción
             </h1>
             
@@ -31,7 +31,7 @@ export default function UnderConstruction() {
               <p className="text-[#4a5568] text-sm md:text-base">
                 {'<div className="coming-soon">'}
               </p>
-              <p className="text-[#ff9d9d] font-medium text-base md:text-lg py-2">
+              <p className="py-2 font-medium text-[#ff9d9d] text-base md:text-lg">
                 Estamos trabajando en algo increíble
               </p>
               <p className="text-[#4a5568] text-sm md:text-base">
@@ -39,7 +39,7 @@ export default function UnderConstruction() {
               </p>
             </div>
 
-            <p className="text-[#4a5568] max-w-md mx-auto">
+            <p className="mx-auto max-w-md text-[#4a5568]">
               Nuestro sitio está actualmente en desarrollo. 
               Pronto traeremos una nueva experiencia web emocionante.
             </p>

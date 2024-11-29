@@ -6,8 +6,13 @@
   },
   "mainLinks": [
     {
-      "text": "Características",
-      "href": "/caracteristicas",
+      "text":"Caracteríasticas",
+      "href":"/#caracteristicas",
+      "enbaled":true
+    },
+    {
+      "text": "Funciones",
+      "href": "/features",
       "enabled": true
     },
     {

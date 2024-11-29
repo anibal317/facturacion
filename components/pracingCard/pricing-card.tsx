@@ -21,14 +21,27 @@ export function PricingCard({ plan }: PricingCardProps) {
   const modalContent = (
     <div className="space-y-4">
       <p className="font-semibold text-lg">Características del plan:</p>
-      <ul className="space-y-2 pl-5 list-disc">
-        {plan.features.map((feature, index) => (
-          <li key={index} className="flex items-start gap-2">
-            <Check className="flex-shrink-0 mt-1 w-5 h-5 text-green-500" />
-            <span>{feature.text}</span>
-          </li>
-        ))}
-      </ul>
+      <ul className={`space-y-4`}>
+          {plan.features.map((feature, index) => (
+            <li key={index} className="flex items-start gap-2">
+              {feature.isPremium ? (
+                <X className="flex-shrink-0 mt-0.5 w-5 h-5 text-red-500" />
+              ) : (
+                <Check className="flex-shrink-0 mt-0.5 w-5 h-5 text-[#4CAF50]" />
+              )}
+              <div className="flex-1">
+                <span className={` 'bg-white' text-gray-600`}>
+                  {feature.text} {feature.savings && (
+                    <span className="ml-1 text-gray-400 text-sm">
+                      (ahorrá: {feature.savings})
+                    </span>
+                  )}
+                </span>
+              </div>
+              {feature.hasInfo && <Info className={`flex-shrink-0 mt-0.5 w-4 h-4 text-blue-600`} />}
+            </li>
+          ))}
+        </ul>
       <p className="mt-4">
         Precio: ${(plan.discountedPrice || plan.originalPrice).toLocaleString()}/mes
         {plan.discount && (
@@ -122,6 +135,7 @@ export function PricingCard({ plan }: PricingCardProps) {
             </li>
           ))}
         </ul>
+
         <Modal
           isOpen={showModal}
           onClose={handleCloseModal}
