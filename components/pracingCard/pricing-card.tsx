@@ -1,11 +1,48 @@
 import { Check, Crown, Info, X } from 'lucide-react';
 import { PricingPlan } from "../../types/pricing";
+import Modal from '../modal/Modal';
+import { useState } from 'react';
 
 interface PricingCardProps {
   plan: PricingPlan;
 }
 
 export function PricingCard({ plan }: PricingCardProps) {
+  const [showModal, setShowModal] = useState(false);
+
+  const handleOpenModal = () => {
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
+
+  const modalContent = (
+    <div className="space-y-4">
+      <p className="font-semibold text-lg">Características del plan:</p>
+      <ul className="space-y-2 pl-5 list-disc">
+        {plan.features.map((feature, index) => (
+          <li key={index} className="flex items-start gap-2">
+            <Check className="flex-shrink-0 mt-1 w-5 h-5 text-green-500" />
+            <span>{feature.text}</span>
+          </li>
+        ))}
+      </ul>
+      <p className="mt-4">
+        Precio: ${(plan.discountedPrice || plan.originalPrice).toLocaleString()}/mes
+        {plan.discount && (
+          <span className="ml-2 font-semibold text-green-600">{plan.discount}% de descuento</span>
+        )}
+      </p>
+      {plan.freeMonths && (
+        <p className="font-semibold text-blue-600">
+          Incluye {plan.freeMonths} meses GRATIS
+        </p>
+      )}
+    </div>
+  );
+
   return (
     <div className={`border-2 ${plan.isRecommended ? 'bg-gray-600' : 'bg-white'} border-blue-600 rounded-lg w-[300px] overflow-hidden`}>
       {plan.isRecommended ? (
@@ -57,9 +94,11 @@ export function PricingCard({ plan }: PricingCardProps) {
             </div>
           )}
         </div>
-
-        <button className="bg-[#4CAF50] hover:bg-[#45a049] mb-6 py-3 rounded-lg w-full font-bold text-white">
-          CONTINUAR
+        <button
+          onClick={handleOpenModal}
+          className="bg-blue-600 hover:bg-blue-700 focus:ring-opacity-50 px-4 py-2 rounded-md focus:ring-2 focus:ring-blue-500 w-full text-white transition duration-300 ease-in-out focus:outline-none"
+        >
+          Continuar
         </button>
 
         <ul className={`space-y-4`}>
@@ -83,11 +122,16 @@ export function PricingCard({ plan }: PricingCardProps) {
             </li>
           ))}
         </ul>
-
+        <Modal
+          isOpen={showModal}
+          onClose={handleCloseModal}
+          title={`Detalles del plan ${plan.title}`}
+          content={modalContent}
+        />
         {/* <button className="mt-6 w-full font-semibold text-blue-600 text-sm">
           Ver todas las características
         </button> */}
       </div>
-    </div>
+    </div >
   );
 }
