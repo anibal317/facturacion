@@ -6,7 +6,12 @@
   },
   "mainLinks": [
     {
-      "text":"Caracteríasticas",
+    "text":"Quienes Somos",
+      "href":"/",
+      "enbaled":true
+  },
+    {
+      "text":"¿Qué podés hacer?",
       "href":"/#caracteristicas",
       "enbaled":true
     },
@@ -29,19 +34,14 @@
       "text": "Preguntas Frecuentes",
       "href": "/qa",
       "enabled": true
-    },
-    {
-      "text": "Ayuda",
-      "href": "/help",
-      "enabled": true
     }
   ],
-  "dropdownEnabled": false,
+  "dropdownEnabled": true,
   "dropdownLinks": [
     {
-      "text": "Blog",
-      "href": "/blog",
-      "enabled": false
+      "text": "Facturacion",
+      "href": "/products/invoices",
+      "enabled": true
     },
     {
       "text": "Soporte",

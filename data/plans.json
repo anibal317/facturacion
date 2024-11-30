@@ -10,7 +10,9 @@
             "freeMonths": null,
             "features": [
                 {
-                    "text": "200GB de almacenamiento SSD"
+                    "text": "200GB de almacenamiento SSD",
+                    "savings": "$10.920",
+                    "hasInfo": false
                 },
                 {
                     "text": "Dominio",
@@ -29,7 +31,8 @@
                 },
                 {
                     "text": "Soporte Premium 24/7",
-                    "isPremium": true
+                    "isPremium": true,
+                    "hasInfo": false
                 },
                 {
                     "text": "Copia de seguridad diaria",
@@ -42,11 +45,14 @@
                     "hasInfo": false
                 },
                 {
-                    "text": "WordPress a 1 click"
+                    "text": "WordPress a 1 click",
+                    "isPremium": true,
+                    "hasInfo": false
                 },
                 {
                     "text": "Tienda en línea",
-                    "isPremium": true
+                    "isPremium": true,
+                    "hasInfo": false
                 }
             ]
         },
@@ -61,7 +67,9 @@
             "freeMonths": null,
             "features": [
                 {
-                    "text": "300GB de almacenamiento SSD"
+                    "text": "300GB de almacenamiento SSD",
+                    "isPremium": true,
+                    "hasInfo": false
                 },
                 {
                     "text": "Dominio",
@@ -69,7 +77,9 @@
                     "hasInfo": false
                 },
                 {
-                    "text": "Cuentas de correo ILIMITADO"
+                    "text": "Cuentas de correo ILIMITADO",
+                    "isPremium": true,
+                    "hasInfo": false
                 },
                 {
                     "text": "Certificado SSL",
@@ -78,7 +88,8 @@
                 },
                 {
                     "text": "Soporte Premium 24/7",
-                    "isPremium": true
+                    "isPremium": true,
+                    "hasInfo": false
                 },
                 {
                     "text": "Copia de seguridad diaria",
@@ -91,11 +102,14 @@
                     "hasInfo": false
                 },
                 {
-                    "text": "WordPress a 1 click"
+                    "text": "WordPress a 1 click",
+                    "isPremium": true,
+                    "hasInfo": false
                 },
                 {
                     "text": "Tienda en línea",
-                    "isPremium": true
+                    "isPremium": true,
+                    "hasInfo": false
                 }
             ]
         },
@@ -110,7 +124,9 @@
             "freeMonths": null,
             "features": [
                 {
-                    "text": "300GB de almacenamiento SSD"
+                    "text": "300GB de almacenamiento SSD",
+                    "isPremium": true,
+                    "hasInfo": false
                 },
                 {
                     "text": "Dominio",
@@ -118,7 +134,9 @@
                     "hasInfo": false
                 },
                 {
-                    "text": "Cuentas de correo ILIMITADO"
+                    "text": "Cuentas de correo ILIMITADO",
+                    "isPremium": true,
+                    "hasInfo": false
                 },
                 {
                     "text": "Certificado SSL",
@@ -127,7 +145,8 @@
                 },
                 {
                     "text": "Soporte Premium 24/7",
-                    "isPremium": false
+                    "isPremium": true,
+                    "hasInfo": false
                 },
                 {
                     "text": "Copia de seguridad diaria",
@@ -140,11 +159,14 @@
                     "hasInfo": false
                 },
                 {
-                    "text": "WordPress a 1 click"
+                    "text": "WordPress a 1 click",
+                    "isPremium": true,
+                    "hasInfo": false
                 },
                 {
                     "text": "Tienda en línea",
-                    "isPremium": false
+                    "isPremium": true,
+                    "hasInfo": false
                 }
             ]
         }

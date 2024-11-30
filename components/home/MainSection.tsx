@@ -2,13 +2,13 @@ import { Button } from "@/components/ui/button"
 
 export default function MainSection() {
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 flex justify-center items-center bg-[#4e91e2] text-white">
-      <span className="sr-only ">FacturaFácil</span>
-      <div className="container px-4 md:px-6 h-full">
-        <div className="flex flex-col items-center space-y-4 text-center w-full">
+    <section className="flex justify-center items-center bg-[#4e91e2] py-12 md:py-24 lg:py-32 xl:py-48 w-full text-white">
+      <span className="sr-only">FacturaFácil</span>
+      <div className="px-4 md:px-6 h-full container">
+        <div className="flex flex-col items-center space-y-4 w-full text-center">
           <div className="space-y-2">
-            <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none text-black">
-              Facturación Simple
+            <h1 className="font-bold text-3xl text-black sm:text-4xl md:text-5xl lg:text-6xl/none tracking-tighter">
+              Order Flow
             </h1>
             <p className="mx-auto max-w-[700px]">
               Simplifica tu proceso de facturación con nuestro sistema intuitivo y potente.
@@ -17,7 +17,7 @@ export default function MainSection() {
           <Button>Prueba Gratis</Button>
           <div className="space-x-4">
             <article className="flex items-start text-left">
-              <ul className=" list-disc">
+              <ul className="list-disc">
                 <h1 className="text-[2rem]">Principales caracteristicas:</h1>
                 <li className="">Guardá clientes y productos sin límites.</li>
                 <li className="">Cree fácil facturas digitales, electrónicas</li>

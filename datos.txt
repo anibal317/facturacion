@@ -1,27 +1,4 @@
-SISTEMA DE FACTURACION ELECTRONICA
-Order Mobile el Software de Facturación Electrónica y Contable
-para Pymes
-
-factura:
-$29000/mes
-
-Clientes
-Productos
-Proveedores
-Facturacion
-Features
-Scheduling
-Client CRM
-Forms & Questionaries
-Expense Tracking
-
-comercios:
-$45000/mes
-
-pro: 
-$65000/mes
-
-Porque nuestro software está íntegramente desarollado por nosotros, lo que le brinda a nuestros clientes el máximo de adaptabilidad sin enlatados ni sistemas antiguos ni legados, contará con un equipo a su disposición para generación de nuevas funcionalidades y análisis de la información
-
-https://docs.google.com/document/d/1NZeOJFHPnLrbAroagIR388m_hdXjQg7y7CC0Xnvi8pM/edit?tab=t.0
-https://web.tfactura.io/ar/planes/
+Home
+Agregar info de Bolivar Software
+    imagen de fondo
+    
