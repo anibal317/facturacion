@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button"
 
 export default function MainSection() {
   return (
-    <section className="flex justify-center items-center bg-[#4e91e2] py-12 md:py-24 lg:py-32 xl:py-48 w-full text-white">
+    <section id="orderFlow" className="flex justify-center items-center bg-[#4e91e2] py-12 md:py-24 lg:py-32 xl:py-48 w-full text-white">
       <span className="sr-only">FacturaFácil</span>
       <div className="px-4 md:px-6 h-full container">
         <div className="flex flex-col items-center space-y-4 w-full text-center">

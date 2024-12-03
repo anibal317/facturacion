@@ -6,7 +6,7 @@ import navData from "@/data/featureNavigation.json"
 export default function Template({ children }: { children: React.ReactNode }) {
     return (
         <>
-                        <Navigation
+            <Navigation
                 logo={navData.logo}
                 mainLinks={navData.mainLinks}
                 dropdownLinks={navData.dropdownLinks}

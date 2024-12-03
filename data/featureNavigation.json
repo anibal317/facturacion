@@ -1,33 +1,29 @@
 {
   "logo": {
-    "icon": "bolivarSoftwareWordOnly.png",
+    "icon": "../../bolivarSoftwareWordOnly.png",
     "text": "FacturaFácil",
     "href": "/"
   },
   "mainLinks": [
+  
     {
-    "text":"Quienes Somos",
-      "href":"/#welcoming",
-      "enbaled":true
-  },
-    {
-      "text":"¿Qué podés hacer?",
-      "href":"/#actions",
-      "enbaled":true
+      "text": "Order Flow",
+      "href": "/products/invoices/#orderFlow",
+      "enabled": true
     },
     {
-      "text": "Beneficios",
-      "href": "/#benefits",
+      "text": "Características",
+      "href": "/products/invoices/#caracteristicas",
       "enabled": true
     },
     {
       "text": "Precios",
-      "href": "/#precios",
+      "href": "/products/invoices/#precios",
       "enabled": true
     },
     {
       "text": "Contacto",
-      "href": "/#contacto",
+      "href": "/products/invoices/#contacto",
       "enabled": true
     },
     {
@@ -36,7 +32,7 @@
       "enabled": true
     }
   ],
-  "dropdownEnabled": true,
+  "dropdownEnabled": false,
   "dropdownLinks": [
     {
       "text": "Facturacion",
