@@ -1,3 +1,4 @@
+import Contacto from "@/components/contact/Contacto";
 import Benefits from "@/components/home/Benefits";
 import Welcoming from "@/components/home/Welcoming";
 
@@ -9,6 +10,7 @@ export default function Home() {
       <main className="z-[-2] flex flex-col mt-8 min-w-screen scroll-smooth">
         <Welcoming />
         <Benefits />
+        <Contacto/>
       </main>
     </div>
   )
