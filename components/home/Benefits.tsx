@@ -1,6 +1,6 @@
 export default function Benefits() {
     return (
-        <section className="relative flex justify-center items-center w-full h-screen overflow-hidden">
+        <section id="benefits" className="relative flex justify-center items-center w-full h-screen overflow-hidden">
             <img
                 src="./choices.webp"
                 alt="About Us"

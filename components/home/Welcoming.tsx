@@ -1,6 +1,6 @@
 export default function Welcoming() {
     return (
-        <section className="">
+        <section className="scroll-smooth" id="welcoming">
             <div className="relative flex justify-center items-center w-full h-screen overflow-hidden">
                 <img
                     src="./aboutUs.webp"
@@ -12,7 +12,7 @@ export default function Welcoming() {
                     Order Flow es un software de facturación electrónica y gestión contable diseñado especialmente para pymes en Argentina.
                 </p>
             </div>
-            <div className="relative flex justify-center items-center w-full h-[900px] overflow-hidden">
+            <div id="actions" className="relative flex justify-center items-center w-full h-[900px] overflow-hidden">
                 <img
                     src="./invoicesHome.webp"
                     alt="About Us"

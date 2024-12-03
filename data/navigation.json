@@ -7,17 +7,17 @@
   "mainLinks": [
     {
     "text":"Quienes Somos",
-      "href":"/",
+      "href":"/#welcoming",
       "enbaled":true
   },
     {
       "text":"¿Qué podés hacer?",
-      "href":"/#caracteristicas",
+      "href":"/#actions",
       "enbaled":true
     },
     {
-      "text": "Funciones",
-      "href": "/features",
+      "text": "Beneficios",
+      "href": "/#benefits",
       "enabled": true
     },
     {
