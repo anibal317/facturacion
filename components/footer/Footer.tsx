@@ -1,5 +1,5 @@
 import Link from "next/link";
-import data from "@/data/navigation.json"
+import data from "@/data/featureNavigation.json"
 import { NavLink } from '../../types/navigation'
 
 export default function Footer() {
