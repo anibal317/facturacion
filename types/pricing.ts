@@ -1,24 +1,20 @@
 export interface PricingFeature {
   text: string;
-  savings?: string | boolean; // Permitir tanto string como boolean
+  savings?: string | boolean | null; // Added null as a possible type
   hasInfo?: boolean;
   isPremium?: boolean;
 }
 
-  
 export interface PricingPlan {
   id: string;
   isRecommended: boolean;
   title: string;
-  subtitle: string;
+  subtitle: string | null;
   originalPrice: number;
-  discountedPrice: number | null; // Puede ser número o null
-  freeMonths?: number | null; // Puede ser opcional y null
-  discount?: string | null; // Puede ser cadena o null
-  features: {
-    text: string;
-    savings?: string | boolean | undefined; // savings puede ser texto o booleano
-    hasInfo?: boolean;
-    isPremium?: boolean;
-  }[];
+  discountedPrice: number | null;
+  freeMonths: number | null;
+  discount?: string | null;
+  features: PricingFeature[];
+  purchasePoints: string | number; // Changed to allow both string and number
 }
+

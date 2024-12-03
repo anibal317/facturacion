@@ -1,0 +1,36 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Plan {
+  id              String    @id @default(cuid())
+  isRecommended   Boolean
+  title           String
+  subtitle        String
+  originalPrice   Int
+  discountedPrice Int?      // Puede ser null
+  discount        String?   // Puede ser null
+  freeMonths      Int?      // Puede ser null
+  features        Feature[] // Relación con las características del plan
+}
+
+model Feature {
+  id         String   @id @default(cuid())
+  text       String
+  savings    String?  // Puede ser null
+  hasInfo    Boolean? // Puede ser null
+  isPremium  Boolean? // Puede ser null
+  planId     String
+  plan       Plan     @relation(fields: [planId], references: [id])
+}

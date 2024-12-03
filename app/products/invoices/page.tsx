@@ -1,10 +1,10 @@
 'use client'
 
 import { useEffect } from 'react'
-import MainFeatures from "@/components/home/MainFeatures";
-import MainSection from "@/components/home/MainSection"
-import Contacto from "../../Contacto";
-import PricingSection from "@/components/home/PricingSection";
+import MainFeatures from "@/components/features/MainFeatures";
+import MainSection from "@/components/features/MainSection"
+import Contacto from "../../../components/contact/Contacto";
+import PricingSection from "@/components/features/PricingSection";
 export default function page() {
     useEffect(() => {
         // Aplicar la clase scroll-smooth al elemento html

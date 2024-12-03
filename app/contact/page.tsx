@@ -1,11 +1,11 @@
 'use client'
-import Contacto from "../Contacto";
+import Contacto from "../../components/contact/Contacto";
 
 
 export default function page() {
     return (
-        <div className="bg-gray-600 h-screen w-scree pt-16">
-            <div className="rounded-sm mb-3 ml-[45%] h-[4%] w-[10%] bg-white flex items-center justify-center">
+        <div className="bg-gray-600 pt-16 w-scree h-screen">
+            <div className="flex justify-center items-center bg-white mb-3 ml-[45%] rounded-sm w-[10%] h-[4%]">
                 <a href="./">Volver al Inicio</a>
             </div>
 
