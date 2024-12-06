@@ -1,0 +1,66 @@
+{
+    "home": {
+      "logo": {
+        "icon": "bolivarSoftwareWordOnly.png",
+        "text": "FacturaFácil",
+        "href": "/"
+      },
+      "links": [
+        {
+          "text": "Quienes Somos",
+          "href": "/#welcoming"
+        },
+        {
+          "text": "¿Qué podés hacer?",
+          "href": "/#actions"
+        },
+        {
+          "text": "Contacto",
+          "href": "/#contacto"
+        },
+        {
+          "text": "Beneficios",
+          "href": "/#benefits"
+        },
+        {
+          "text": "Facturacion",
+          "href": "/products/invoices"
+        }
+      ]
+    },
+    "feature": {
+      "logo": {
+        "icon": "../../bolivarSoftwareWordOnly.png",
+        "text": "FacturaFácil",
+        "href": "/"
+      },
+      "links": [
+        {
+          "text": "Order Flow",
+          "href": "/products/invoices/#orderFlow"
+        },
+        {
+          "text": "Características",
+          "href": "/products/invoices/#caracteristicas"
+        },
+        {
+          "text": "Precios",
+          "href": "/products/invoices/#precios"
+        },
+        {
+          "text": "Contacto",
+          "href": "/products/invoices/#contacto"
+        },
+        {
+          "text":"Funciones",
+          "href":"/products/features"
+        },
+        {
+          "text": "Preguntas Frecuentes",
+          "href": "/products/qa"
+        }
+      ]
+    }
+  }
+  
+  

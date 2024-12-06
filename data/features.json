@@ -19,7 +19,9 @@
           "Listado de saldos en ordenes de compra"
         ]
       }
-    ]
+    ],
+    "video":true,
+    "videoLink":"https://www.youtube.com/watch?v=zl1CgOgb1DA"
   },
   "Productos": {
     "description": "Gestión de productos, precios y stock.",
@@ -44,7 +46,9 @@
         ]
       },
       "Stock crítico"
-    ]
+    ],
+    "video":true,
+    "videoLink":"https://www.youtube.com/watch?v=zl1CgOgb1DA"
   },
   "Proveedores": {
     "description": "",
@@ -57,13 +61,17 @@
       "Retencion de ganancias",
       "Historial de facturas por proveedor",
       "Facturas por vender"
-    ]
+    ],
+    "video":true,
+    "videoLink":"https://www.youtube.com/watch?v=zl1CgOgb1DA"
   },
   "Bancos": {
     "description": "",
     "items": [
       "Listado de cheques"
-    ]
+    ],
+    "video":true,
+    "videoLink":"https://www.youtube.com/watch?v=zl1CgOgb1DA"
   },
   "Presupuestos": {
     "description": "",
@@ -71,7 +79,9 @@
       "Nuevo presupuesto",
       "Generar orden desde presupuesto",
       "Cambiar cliente de presupuesto"
-    ]
+    ],
+    "video":true,
+    "videoLink":"https://www.youtube.com/watch?v=zl1CgOgb1DA"
   },
   "Orden de compras": {
     "description": "",
@@ -84,7 +94,9 @@
       "unificar orden de compra",
       "cambiar cliente de orden de compra",
       "Historial de órdenes de compra"
-    ]
+    ],
+    "video":true,
+    "videoLink":"https://www.youtube.com/watch?v=zl1CgOgb1DA"
   },
   "Facturación": {
     "description": "",
@@ -96,7 +108,9 @@
       "LIstado de facturas",
       "Facturacion por punto de venta",
       "Proforma"
-    ]
+    ],
+    "video":true,
+    "videoLink":"https://www.youtube.com/watch?v=zl1CgOgb1DA"
   },
   "Caja": {
     "description": "",
@@ -107,13 +121,17 @@
       "Retirar dinero de caja",
       "Detalle de caja actual",
       "Listado de cajas por fecha"
-    ]
+    ],
+    "video":true,
+    "videoLink":"https://www.youtube.com/watch?v=zl1CgOgb1DA"
   },
   "Caja General": {
     "description": "",
     "items": [
       "Detalle de caja"
-    ]
+    ],
+    "video":true,
+    "videoLink":"https://www.youtube.com/watch?v=zl1CgOgb1DA"
   },
   "Libro de iva": {
     "description": "Manejo de IVA",
@@ -121,7 +139,9 @@
       "Compras",
       "Ventas",
       "Diferencia de IVA"
-    ]
+    ],
+    "video":true,
+    "videoLink":"https://www.youtube.com/watch?v=zl1CgOgb1DA"
   },
   "Control de gastos": {
     "description": "Control de Gastos internos",
@@ -129,14 +149,18 @@
       "Cargar gasto",
       "Cargar tipo de gasto",
       "Cargar facturas de gasto"
-    ]
+    ],
+    "video":true,
+    "videoLink":"https://www.youtube.com/watch?v=zl1CgOgb1DA"
   },
   "Vendedores": {
     "description": "Gestor de Vendedores",
     "items": [
       "Actualizar vendedores",
       "Calcular comision"
-    ]
+    ],
+    "video":true,
+    "videoLink":"https://www.youtube.com/watch?v=zl1CgOgb1DA"
   },
   "Estadisticas": {
     "description": "Modulo de estadisticas barias",
@@ -173,6 +197,8 @@
           "Proveedor - Grupo - Vendedor"
         ]
       }
-    ]
+    ],
+    "video":true,
+    "videoLink":"https://www.youtube.com/watch?v=zl1CgOgb1DA"
   }
 }
