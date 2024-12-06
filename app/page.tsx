@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <Layout variant="home">
 
-      <div className="flex flex-col min-h-screen scroll-smooth">
+      <div className="flex flex-col scroll-smooth">
         <main className="z-[-2] flex flex-col mt-8 min-w-screen scroll-smooth">
           <Welcoming />
           <Clients/>

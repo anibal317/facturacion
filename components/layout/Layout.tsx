@@ -14,9 +14,9 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children, variant }) => {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col">
       <Navbar variant={variant} />
-      <main className="flex-grow mx-auto px-4 py-8 container">
+      <main className="flex-grow">
         {children}
       </main>
       <Footer />
