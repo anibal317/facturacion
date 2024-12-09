@@ -39,7 +39,7 @@ const FeaturesAccordion: React.FC = () => {
     const midpoint = Math.ceil(entries.length / 2);
 
     const renderAccordionColumn = (columnEntries: [string, Section][]) => (
-        <div className="w-full h-[calc(82.2vh-230px)]">
+        <div className="mt-5 w-full">
             <Accordion type="single" collapsible className="w-full">
                 {columnEntries.map(([section, details], index) => (
                     <AccordionItem key={section} value={`item-${index + 1}`}>
@@ -81,7 +81,6 @@ const FeaturesAccordion: React.FC = () => {
                                                 variant="outline"
                                             >
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className="text-red-600 fill-current"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path></svg> Ver Video
-
                                             </Button>
                                         </div>
                                     )}
@@ -91,6 +90,22 @@ const FeaturesAccordion: React.FC = () => {
                     </AccordionItem>
                 ))}
             </Accordion>
+        </div>
+    );
+
+    const openVideoModal = (videoLink: string) => {
+        setCurrentVideoLink(videoLink);
+        setIsModalOpen(true);
+    };
+
+    return (
+        <Layout variant='feature'>
+            <div className="mx-auto px-4 py-8 w-full max-w-7xl">
+                <div className="gap-8 grid grid-cols-1 md:grid-cols-2">
+                    {renderAccordionColumn(entries.slice(0, midpoint))}
+                    {renderAccordionColumn(entries.slice(midpoint))}
+                </div>
+            </div>
             <Modal
                 isOpen={isModalOpen}
                 onClose={() => setIsModalOpen(false)}
@@ -106,23 +121,9 @@ const FeaturesAccordion: React.FC = () => {
                     ></iframe>
                 }
             />
-        </div>
-    );
-    const openVideoModal = (videoLink: string) => {
-        setCurrentVideoLink(videoLink);
-        setIsModalOpen(true);
-    };
-    return (
-        <Layout variant='feature'>
-
-            <div className="mx-auto px-4 pt-24 pb-5 w-full max-w-7xl">
-                <div className="gap-8 grid grid-cols-1 md:grid-cols-2">
-                    {renderAccordionColumn(entries.slice(0, midpoint))}
-                    {renderAccordionColumn(entries.slice(midpoint))}
-                </div>
-            </div>
         </Layout>
     );
 };
 
 export default FeaturesAccordion;
+

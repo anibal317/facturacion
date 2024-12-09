@@ -16,10 +16,10 @@ export default function Footer() {
             </Link>
         )
     }
-    return <footer className="flex sm:flex-row flex-col justify-center items-center bg-[#758395] mt-12 px-4 md:px-6 py-2 border-t w-full h-auto text-[#fff] shrink-0">
+    return <footer className="flex sm:flex-row flex-col justify-center items-center bg-[#758395] mt-12 px-4 md:px-6 py-2 border-t text-[#fff]">
         <div className="flex flex-col bg-[#374151] p-2 w-screen text-[#e5e7eb]">
             <div className="flex flex-row">
-                <div className="flex flex-col justify-center w-[35%] w-[35%]">
+                <div className="flex flex-col justify-center w-[35%] h-[35%]">
                     <div className="flex items-center gap-4 w-full">
                         <img alt="Logo Preview" src="../../favicon.ico" width="90" />
                         <div className="text-5xl">Bolívar SOFTWARE</div>

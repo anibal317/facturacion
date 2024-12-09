@@ -2,7 +2,6 @@ import Footer from '../footer/Footer';
 import Navbar from '../navBar/Navigation';
 import "@/app/globals.css"
 
-
 interface LayoutProps {
   children: React.ReactNode
   variant: 'home' | 'feature'
@@ -10,7 +9,7 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children, variant }) => {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col min-h-screen">
       <Navbar variant={variant} />
       <main className="flex-grow">
         {children}
@@ -21,5 +20,4 @@ const Layout: React.FC<LayoutProps> = ({ children, variant }) => {
 }
 
 export default Layout
-
 

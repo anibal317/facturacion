@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Bolivar Software | Innovación en Soluciones Tecnológicas",
     description: "Servicios personalizados de desarrollo de software para optimizar y transformar tu negocio.",
-    url: "https://tu-dominio.com",
+    url: "https://bolivarsoftware.com/",
     siteName: "Bolivar Software",
     images: [
       {
@@ -39,7 +39,7 @@ export default function RootLayout({
       <head>
       <link rel="icon" href="../favicon.ico" sizes="any" />
       </head>
-      <body>{children}</body>
+      <body className="">{children}</body>
     </html>
   )
 }
