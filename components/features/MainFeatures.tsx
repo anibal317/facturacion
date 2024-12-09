@@ -1,42 +1,41 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { CheckCircle, BarChart, Clock } from "lucide-react"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { CheckCircle, BarChart, Clock, Headphones,PieChart } from "lucide-react";
+import { Feature } from "../../types/iconTypes";
+import data from "../../data/mainFeatures.json"; // Asegúrate de usar la ruta correcta
 
+// Cambia el tipo de iconMap para aceptar props de SVG
+const iconMap: Record<Feature['icon'], React.ComponentType<React.SVGProps<SVGSVGElement>>> = {
+    CheckCircle,
+    BarChart,
+    Clock,
+    Headphones,  
+    PieChart,    
+};
 
 export default function MainFeatures() {
-  return (
-    <section id="caracteristicas" className="h-screen py-12 md:py-24 lg:py-32 bg-[#72a9e8] dark:bg-gray-800 flex justify-center items-center">
-      <div className="container px-4 md:px-6">
-        <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12">Características Principales</h2>
-        <div className="grid gap-6 lg:grid-cols-3 lg:gap-12">
-          <Card>
-            <CardHeader>
-              <CheckCircle className="w-10 h-10 text-green-500 mb-4" />
-              <CardTitle>Fácil de Usar</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p>Interfaz intuitiva que se integra perfectamente con WordPress.</p>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader>
-              <BarChart className="w-10 h-10 text-blue-500 mb-4" />
-              <CardTitle>Informes Detallados</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p>Genera informes completos para un mejor control de tus finanzas.</p>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader>
-              <Clock className="w-10 h-10 text-purple-500 mb-4" />
-              <CardTitle>Ahorro de Tiempo</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p>Automatiza tus procesos de facturación y ahorra horas cada mes.</p>
-            </CardContent>
-          </Card>
-        </div>
-      </div>
-    </section>
-  )
-};
+    const features: Feature[] = data as Feature[]; // O usa la validación
+
+    return (
+        <section id="caracteristicas" className="flex justify-center items-center bg-[#72a9e8] dark:bg-gray-800 py-12 md:py-24 lg:py-32 h-screen">
+            <div className="px-4 md:px-6 container">
+                <h2 className="mb-12 font-bold text-3xl text-center sm:text-5xl tracking-tighter">Características Principales</h2>
+                <div className="gap-6 lg:gap-12 grid lg:grid-cols-3">
+                    {features.map((feature, index) => {
+                        const IconComponent = iconMap[feature.icon]; // TypeScript ahora sabe que feature.icon es un icono válido
+                        return (
+                            <Card key={index}>
+                                <CardHeader>
+                                    <IconComponent className={`w-10 h-10 ${feature.color} mb-4`} />
+                                    <CardTitle>{feature.title}</CardTitle>
+                                </CardHeader>
+                                <CardContent>
+                                    <p>{feature.description}</p>
+                                </CardContent>
+                            </Card>
+                        );
+                    })}
+                </div>
+            </div>
+        </section>
+    );
+}
