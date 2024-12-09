@@ -28,7 +28,7 @@ export default function Footer() {
     }
 
     return (
-        <footer className="bg-[#374151] mt-12 text-[#e5e7eb]">
+        <footer className="bg-[#374151] text-[#e5e7eb]">
             <div className="mx-auto px-4 py-8 container">
                 <div className="flex lg:flex-row flex-col justify-between items-center lg:items-start">
                     <div className="mb-8 lg:mb-0 text-center lg:text-left">
