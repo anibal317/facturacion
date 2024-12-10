@@ -1,3 +1,5 @@
+// app/products/qa/page.tsx
+
 import Layout from "@/components/layout/Layout";
 import {
     Accordion,
@@ -5,29 +7,22 @@ import {
     AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion";
-import faqs from "../../../data/faqs.json"; // Asegúrate de usar la ruta correcta
+import { getFAQs } from '@/app/products/qa/services/faqService' // Asegúrate de que la ruta sea correcta
+import { FAQ } from '@/types/faq'; // Asegúrate de que la ruta sea correcta
 
-// Define el tipo de las propiedades
-interface CustomAccordionContentProps {
-    htmlContent: string;
-}
+// Componente de página
+const Page = async () => {
+    const faqs: FAQ[] = await getFAQs(); // Llama a la función del servicio
 
-const CustomAccordionContent: React.FC<CustomAccordionContentProps> = ({ htmlContent }) => {
-    return (
-        <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
-    );
-};
-
-export default function Page() {
     return (
         <Layout variant='feature'>
-            <div className="flex justify-center items-center divide-y divide-dashed w-full h-[69.7vh]">
+            <div className="flex justify-center items-center pt-16 pb-16 divide-y divide-dashed">
                 <Accordion type="single" collapsible className="w-3/4">
                     {faqs.map((faq) => (
-                        <AccordionItem key={faq.value} value={faq.value}>
+                        <AccordionItem key={faq.id} value={faq.id.toString()}>
                             <AccordionTrigger>{faq.question}</AccordionTrigger>
                             <AccordionContent>
-                                <CustomAccordionContent htmlContent={faq.answer} />
+                                <div dangerouslySetInnerHTML={{ __html: faq.answer }} />
                             </AccordionContent>
                         </AccordionItem>
                     ))}
@@ -35,4 +30,6 @@ export default function Page() {
             </div>
         </Layout>
     );
-}
+};
+
+export default Page;
