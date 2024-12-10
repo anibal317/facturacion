@@ -1,7 +1,10 @@
-// types.ts (puedes crear un archivo separado para tus tipos)
+import { TypeIcon as type, type LucideIcon } from 'lucide-react';
+
 export type Feature = {
-    icon: 'CheckCircle' | 'BarChart' | 'Clock' | 'Headphones' | 'PieChart' ; // Asegúrate de que estos coincidan con los íconos que usas
+    icon: string; // Changed from keyof typeof import('lucide-react') to string
     title: string;
     description: string;
-    color: string; // Puedes ser más específico si lo deseas
+    color?: string;
+    isStrikethrough?: boolean;
 };
+

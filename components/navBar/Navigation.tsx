@@ -45,8 +45,8 @@ const Navbar: React.FC<NavbarProps> = ({ variant }) => {
   if (!navData) return null
 
   const navStyles = {
-    home: 'fixed bg-[#4e637c] w-full text-[#fff] z-50',
-    feature: 'fixed bg-[#4e637c] w-full text-[#fff] z-50',
+    home: 'fixed bg-[#FFC107] w-full text-[#333] z-50',
+    feature: 'fixed bg-[#001F3F] w-full text-[#fff] z-50',
   }
 
   const toggleMenu = () => {
