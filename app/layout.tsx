@@ -26,8 +26,8 @@ export const metadata: Metadata = {
     description: "Descubre cómo nuestras soluciones tecnológicas pueden potenciar tu negocio.",
     images: ["/path/to/your-image.jpg"],
   },
+  metadataBase: new URL("https://bolivarsoftware.com/"), // Agrega esta línea
 };
-
 
 export default function RootLayout({
   children,
@@ -37,10 +37,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-      <link rel="icon" href="../favicon.ico" sizes="any" />
-      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+        <link rel="icon" href="../favicon.ico" sizes="any" />
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
       </head>
-      <body className="">{children}</body>
+      <body>{children}</body>
     </html>
   )
 }

@@ -1,11 +1,22 @@
-import Layout from "@/components/layout/Layout"
+import Layout from "@/components/layout/Layout";
 import {
     Accordion,
     AccordionContent,
     AccordionItem,
     AccordionTrigger,
-} from "@/components/ui/accordion"
-import faqs from "../../../data/faqs.json" // Asegúrate de usar la ruta correcta
+} from "@/components/ui/accordion";
+import faqs from "../../../data/faqs.json"; // Asegúrate de usar la ruta correcta
+
+// Define el tipo de las propiedades
+interface CustomAccordionContentProps {
+    htmlContent: string;
+}
+
+const CustomAccordionContent: React.FC<CustomAccordionContentProps> = ({ htmlContent }) => {
+    return (
+        <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+    );
+};
 
 export default function Page() {
     return (
@@ -15,11 +26,13 @@ export default function Page() {
                     {faqs.map((faq) => (
                         <AccordionItem key={faq.value} value={faq.value}>
                             <AccordionTrigger>{faq.question}</AccordionTrigger>
-                            <AccordionContent dangerouslySetInnerHTML={{ __html: faq.answer }} />
+                            <AccordionContent>
+                                <CustomAccordionContent htmlContent={faq.answer} />
+                            </AccordionContent>
                         </AccordionItem>
                     ))}
                 </Accordion>
             </div>
         </Layout>
-    )
+    );
 }
