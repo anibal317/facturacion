@@ -1,4 +1,4 @@
-import { Check, Crown, Info, X } from 'lucide-react';
+import { Check, Crown, Info, X } from "lucide-react";
 import { PricingPlan } from "@/types/pricing";
 import Modal from "../modal/Modal";
 import { useState } from "react";
@@ -13,48 +13,51 @@ export function PricingCard({ plan }: PricingCardProps) {
   const handleOpenModal = () => setShowModal(true);
   const handleCloseModal = () => setShowModal(false);
 
+  // Renderizar características del plan
+  const renderPlanFeatures = (features: PricingPlan["planfeature"], isModal: boolean) => {
+    return Array.isArray(features) && features.length > 0 ? (
+      features.map((feature) => (
+        <li key={feature.id} className="flex items-start gap-2">
+          {feature.isPremium ? (
+            <X className="flex-shrink-0 mt-0.5 w-5 h-5 text-red-500" />
+          ) : (
+            <Check className="flex-shrink-0 mt-0.5 w-5 h-5 text-[#4CAF50]" />
+          )}
+          <div className="flex-1">
+            <span className={`${isModal ? "text-gray-600" : plan.isRecommended ? "text-white" : "text-gray-600"}`}>
+              {feature.text}
+              {feature.savings !== null && feature.savings !== undefined && (
+                <span className="ml-1 text-gray-400 text-sm">
+                  (ahorrá: {feature.savings})
+                </span>
+              )}
+            </span>
+          </div>
+          {feature.hasInfo && <Info className="flex-shrink-0 mt-0.5 w-4 h-4 text-blue-600" />}
+        </li>
+      ))
+    ) : (
+      <li className={`${isModal ? "text-gray-600" : "text-gray-600"}`}>
+        No hay características disponibles para este plan.
+      </li>
+    );
+  };
+
   const modalContent = (
     <div className="space-y-4">
       <p className="font-semibold text-lg">Características del plan:</p>
-      <ul className="space-y-4">
-        {Array.isArray(plan.planfeature) && plan.planfeature.length > 0 ? (
-          plan.planfeature.map((feature) => (
-            <li key={feature.id} className="flex items-start gap-2">
-              {feature.isPremium ? (
-                <X className="flex-shrink-0 mt-0.5 w-5 h-5 text-red-500" />
-              ) : (
-                <Check className="flex-shrink-0 mt-0.5 w-5 h-5 text-[#4CAF50]" />
-              )}
-              <div className="flex-1">
-                <span className="text-gray-600">
-                  {feature.text}{" "}
-                  {feature.savings !== null && feature.savings !== undefined && (
-                    <span className="ml-1 text-gray-400 text-sm">
-                      (ahorrá: {feature.savings})
-                    </span>
-                  )}
-                </span>
-              </div>
-              {feature.hasInfo && <Info className="flex-shrink-0 mt-0.5 w-4 h-4 text-blue-600" />}
-            </li>
-          ))
-        ) : (
-          <li className="text-gray-600">No hay características disponibles para este plan.</li>
-        )}
-      </ul>
+      <ul className="space-y-4">{renderPlanFeatures(plan.planfeature, true)}</ul>
       <p className="mt-4">
         Precio: $
         {(plan.discountedPrice || plan.originalPrice).toLocaleString()}/mes
-        {plan.discount && (
-          <span className="ml-2 font-semibold text-green-600">{plan.discount}% de descuento</span>
+        {plan.discountedPrice && (
+          <span className="ml-2 font-semibold text-green-600">{plan.discountedPrice}% de descuento</span>
         )}
       </p>
       {plan.freeMonths && (
         <p className="font-semibold text-blue-600">Incluye {plan.freeMonths} meses GRATIS</p>
       )}
-      <p className="text-gray-600">
-        Puntos de venta: {plan.purchasePoints}
-      </p>
+      <p className="text-gray-600">Puntos de venta: {plan.purchasePoints}</p>
     </div>
   );
 
@@ -64,21 +67,24 @@ export function PricingCard({ plan }: PricingCardProps) {
         plan.isRecommended ? "bg-gray-600" : "bg-white"
       } border-blue-600 rounded-lg w-[370px] overflow-hidden`}
     >
+      {/* Banner de "Más Elegido" */}
       {plan.isRecommended ? (
         <div className="flex justify-between items-center bg-[#007bff] px-4 py-1 text-white recommended-badge">
           <span className="font-semibold">MÁS ELEGIDO</span>
           <Crown className="ml-1 w-5 h-5" />
         </div>
-      ):(
-        <div className='bg-white h-[30px]'></div>
+      ) : (
+        <div className="bg-white h-[30px]"></div>
       )}
+
+      {/* Contenido del Plan */}
       <div className={`p-6 ${plan.isRecommended ? "bg-gray-600 text-white" : "bg-white"}`}>
         <div className="mb-6 text-center">
           <h2 className={`text-xl font-bold ${plan.isRecommended ? "text-white" : "text-gray-600"}`}>
             {plan.title}
           </h2>
           {plan.subtitle && (
-            <h3 className={`font-bold text-2xl ${plan.isRecommended ? "text-white" : "" }`}>
+            <h3 className={`font-bold text-2xl ${plan.isRecommended ? "text-white" : ""}`}>
               {plan.subtitle}
             </h3>
           )}
@@ -88,35 +94,10 @@ export function PricingCard({ plan }: PricingCardProps) {
             ${(plan.discountedPrice || plan.originalPrice).toLocaleString()}
           </span>
         </div>
-        <ul className="space-y-4 mb-6">
-          {Array.isArray(plan.planfeature) && plan.planfeature.length > 0 ? (
-            plan.planfeature.map((feature) => (
-              <li key={feature.id} className="flex items-start gap-2">
-                {feature.isPremium ? (
-                  <X className="flex-shrink-0 mt-0.5 w-5 h-5 text-red-500" />
-                ) : (
-                  <Check className="flex-shrink-0 mt-0.5 w-5 h-5 text-[#4CAF50]" />
-                )}
-                <div className="flex-1">
-                  <span className={`${plan.isRecommended ? "text-white" : "text-gray-600"}`}>
-                    {feature.text}
-                    {feature.savings !== null && feature.savings !== undefined && (
-                      <span className="ml-1 text-gray-400 text-sm">
-                        (ahorrá: {feature.savings})
-                      </span>
-                    )}
-                  </span>
-                </div>
-                {feature.hasInfo && <Info className="flex-shrink-0 mt-0.5 w-4 h-4 text-blue-600" />}
-              </li>
-            ))
-          ) : (
-            <li className="text-gray-600">No hay características disponibles para este plan.</li>
-          )}
-        </ul>
+        <ul className="space-y-4 mb-6">{renderPlanFeatures(plan.planfeature, false)}</ul>
         <div className="mb-6">
           <span className={`${plan.isRecommended ? "text-white" : "text-gray-600"}`}>
-            Puntos de venta: {typeof plan.purchasePoints === 'number' ? plan.purchasePoints : plan.purchasePoints}
+            Puntos de venta: {typeof plan.purchasePoints === "number" ? plan.purchasePoints : plan.purchasePoints}
           </span>
         </div>
         <button
@@ -125,9 +106,13 @@ export function PricingCard({ plan }: PricingCardProps) {
         >
           Continuar
         </button>
-        <Modal isOpen={showModal} onClose={handleCloseModal} title={`Detalles del plan ${plan.title}`} content={modalContent} />
+        <Modal
+          isOpen={showModal}
+          onClose={handleCloseModal}
+          title={`Detalles del plan ${plan.title}`}
+          content={modalContent}
+        />
       </div>
     </div>
   );
 }
-
