@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     siteName: "Bolivar Software",
     images: [
       {
-        url: "/path/to/your-image.jpg", // Asegúrate de usar una imagen atractiva y optimizada
+        url: "bolivarSoftwareWordOnly.png", // Asegúrate de usar una imagen atractiva y optimizada
         width: 800,
         height: 600,
         alt: "Logo de Bolivar Software",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     site: "@TuCuentaTwitter", // Añade tu cuenta de Twitter
     title: "Bolivar Software",
     description: "Descubre cómo nuestras soluciones tecnológicas pueden potenciar tu negocio.",
-    images: ["/path/to/your-image.jpg"],
+    images: ["bolivarSoftwareWordOnly.png"],
   },
   metadataBase: new URL("https://bolivarsoftware.com/"), // Agrega esta línea
 };
@@ -37,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="../favicon.ico" sizes="any" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
       </head>
       <body>{children}</body>

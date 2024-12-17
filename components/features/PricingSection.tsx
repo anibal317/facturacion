@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { PricingPlan } from "@/types/pricing";
 import { PricingCard } from "../pracingCard/pricing-card";
-import Spinner from "../spinner/Spinner";
-import { Skeleton } from "../Skeleton";
+import { Skeleton } from "../skeleton/Skeleton";
 
 export default function PricingSection() {
   const [plans, setPlans] = useState<PricingPlan[]>([]);

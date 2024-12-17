@@ -38,7 +38,6 @@ export default function Contacto() {
           `${process.env.NEXT_PUBLIC_PUBLIC_ID}`         // Reemplaza con tu llave pública
         ).then(
           (response) => {
-            console.log(response);
             Swal.close();
             setIsSend(true);
             Swal.fire({
@@ -49,8 +48,6 @@ export default function Contacto() {
             });
           },
           (error) => {
-            console.log(error);
-
             Swal.fire({
               icon: 'error',
               title: 'Oops... Error!',
@@ -64,8 +61,6 @@ export default function Contacto() {
 
 
       } catch (error) {
-        console.log(error);
-
         Swal.fire({
           icon: 'error',
           title: 'Oops... Error!',
@@ -86,7 +81,7 @@ export default function Contacto() {
 
 
   return (
-    <div id="contacto" className="flex flex-col justify-center items-center bg-[#a0aab6] p-2 pt-6 h-auto">
+    <div id="contacto" className="flex flex-col justify-center items-center bg-[#a0aab6] p-2 pt-12 h-auto">
       <div className="bg-[#FFFFFF] md:px-6 pt-2 md:pt-10 md:pb-6 md:rounded-[25px] md:w-4/6">
         <p className="md:pb-4 font-semibold text-center text-xs md:text-xl">Horario de atención por consultas de 13hs a 17hs</p>
         <div className="flex lg:flex-row flex-col-reverse">

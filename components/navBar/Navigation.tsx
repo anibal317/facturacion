@@ -17,8 +17,14 @@ interface NavLink {
 }
 
 interface NavData {
-  logo: Logo
-  links: NavLink[]
+  home: {
+    logo: Logo
+    links: NavLink[]
+  }
+  feature: {
+    logo: Logo
+    links: NavLink[]
+  }
 }
 
 interface NavbarProps {
@@ -32,9 +38,12 @@ const Navbar: React.FC<NavbarProps> = ({ variant }) => {
   useEffect(() => {
     const fetchNavData = async () => {
       try {
-        const res = await fetch('/navLinks.json')
+        const res = await fetch('/api/navLinks')
+        if (!res.ok) {
+          throw new Error('Network response was not ok')
+        }
         const data = await res.json()
-        setNavData(data[variant])
+        setNavData(data)
       } catch (error) {
         console.error('Error fetching nav data:', error)
       }
@@ -42,10 +51,13 @@ const Navbar: React.FC<NavbarProps> = ({ variant }) => {
     fetchNavData()
   }, [variant])
 
-  if (!navData) return null
+  // Verifica que navData y la sección correspondiente estén definidos
+  if (!navData || !navData[variant]) return null;
+
+  const { logo, links } = navData[variant];
 
   const navStyles = {
-    home: 'fixed bg-[#FFC107] w-full text-[#333] z-50',
+    home: 'fixed bg-[#1976D2] w-full text-[#fff] z-50',
     feature: 'fixed bg-[#001F3F] w-full text-[#fff] z-50',
   }
 
@@ -57,29 +69,26 @@ const Navbar: React.FC<NavbarProps> = ({ variant }) => {
     <nav className={`${navStyles[variant]}`}>
       <div className="mx-auto px-4 lg:px-6 container">
         <div className="flex justify-between items-center h-14">
-          <Link href={navData.logo.href} className="flex items-center">
-            <Image src={navData.logo.icon} alt="Logo" width={32} height={32} className="w-8 h-8" />
-            <span className="ml-2 font-bold text-lg sm:text-xl lg:text-2xl">{navData.logo.text}</span>
+          <Link href={logo.href} className="flex items-center">
+            <Image src={logo.icon} alt="Logo" width={32} height={32} className="w-8 h-8" />
+            <span className="ml-2 font-bold text-lg sm:text-xl lg:text-2xl">{logo.text}</span>
           </Link>
-          {/* Cambiamos el breakpoint de 'md' a 'lg' para evitar solapamiento en 768px */}
           <div className="lg:flex space-x-4 hidden">
-            {navData.links.map((link) => (
+            {links.map((link) => (
               <Link key={link.href} href={link.href} className="text-sm lg:text-base hover:underline">
                 {link.text}
               </Link>
             ))}
           </div>
-          {/* Ajustamos el botón del menú para que aparezca hasta 1023px */}
           <button className="lg:hidden" onClick={toggleMenu} aria-label="Toggle menu">
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
-      {/* Menú móvil: visible hasta 1023px */}
       {isMenuOpen && (
         <div className="lg:hidden">
           <div className="space-y-1 px-2 pt-2 pb-3">
-            {navData.links.map((link) => (
+            {links.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
@@ -97,4 +106,3 @@ const Navbar: React.FC<NavbarProps> = ({ variant }) => {
 }
 
 export default Navbar
-

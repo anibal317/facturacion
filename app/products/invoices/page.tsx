@@ -6,6 +6,7 @@ import MainSection from "@/components/features/MainSection"
 import PricingSection from "@/components/features/PricingSection";
 import Contacto from '@/components/contact/Contacto';
 import Layout from '@/components/layout/Layout';
+import Whatsapp from '@/components/Whatsapp/Whatsapp';
 export default function page() {
     useEffect(() => {
         // Aplicar la clase scroll-smooth al elemento html
@@ -13,13 +14,14 @@ export default function page() {
     }, [])
     return (
         <Layout variant='feature'>
-
             <section>
                 <MainSection />
                 <MainFeatures />
                 <PricingSection />
                 <Contacto />
             </section>
+            <Whatsapp phoneNumber="2314405020" positionX="40px" positionY="50px" />
+
         </Layout>
     )
 };

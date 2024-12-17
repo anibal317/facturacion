@@ -18,7 +18,7 @@ export default function Clients() {
             />
             <div className="relative z-10 flex flex-col gap-4 bg-[#ffffff] bg-opacity-50 shadow-xl pt-2 rounded-2xl">
 
-                <h1 className="font-extrabold text-5xl text-blue-500 text-center">Nuestos clientes que confían en nosotros</h1>
+                <h1 className="font-extrabold text-5xl text-blue-500 text-center">Hoy contamos con mas de 250 clientes</h1>
                 <Carousel images={imagesAcercaDe} speed={60} />
             </div>
         </section>

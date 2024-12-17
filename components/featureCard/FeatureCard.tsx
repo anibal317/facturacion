@@ -5,7 +5,7 @@ import { TypeIcon as type, LucideIcon } from 'lucide-react';
 interface FeatureCardProps {
   icon: string;
   title: string;
-  description: string;
+  description?: string;
   color?: string;
   isStrikethrough?: boolean;
   className?: string;

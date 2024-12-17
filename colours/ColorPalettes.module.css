@@ -1,0 +1,59 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+  
+  .palette {
+    margin-bottom: 2rem;
+  }
+  
+  .paletteName {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .colorGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+  
+  .colorItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .colorSwatch {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0.5rem;
+  }
+  
+  .colorName {
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  
+  .colorHex {
+    font-size: 0.8rem;
+    color: #666;
+  }
+  
+  @media (max-width: 768px) {
+    .colorGrid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  

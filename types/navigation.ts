@@ -1,6 +1,7 @@
 export interface NavLink {
   text: string;
   href: string;
+  enabled?: boolean;
 }
 
 export interface NavigationData {

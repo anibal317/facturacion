@@ -12,15 +12,16 @@ export default function Benefits() {
         <Image
           src="/choices.webp"
           alt="Background"
-          layout="fill"
-          objectFit="cover"
+          fill
+          style={{ objectFit: 'cover' }}
           quality={100}
+          priority
         />
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
       </div>
       <div className="relative z-10 mx-auto px-4 container">
         <h2 className="mb-12 font-bold text-3xl text-center text-white lg:text-4xl">Nuestros Beneficios</h2>
-        <div className="gap-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+        <div className="justify-center items-center gap-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {benefits.map((benefit: Feature, index) => (
             <FeatureCard
               key={index}
