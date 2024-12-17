@@ -14,24 +14,31 @@ export default function MainSection() {
               Simplifica tu proceso de facturación con nuestro sistema intuitivo y potente.
             </p>
           </div>
-          <Button>Prueba Gratis</Button>
+          <div className="border- border-[#303F9F] border-t-2 w-3/4"></div> 
           <div className="space-x-4">
-            <article className="flex items-start text-left">
-              <ul className="list-disc">
-                <h1 className="text-[2rem]">Principales caracteristicas:</h1>
-                <li className="">Guardá clientes y productos sin límites.</li>
-                <li className="">Cree fácil facturas digitales, electrónicas</li>
-                <li className="">Verifica el stock en tiempo real</li>
-                <li className="">Lleva el cuenta corriente de cliente y provedores</li>
-                <li className="">Aumenta el precio de tus productos de forma masiva</li>
-                <li className="">Genere libro de iva rapidamente</li>
-                <li className="">Revise estadisticas se su Empresa</li>
-                <li className="">Gestion de cajas</li>
-                <li className="">Importacion y exportacion de productos y clientes</li>
-                <li className="">Genere presupuestos</li>
-                <li className="">Maneje deferentes listas de precios</li>
-              </ul>
+            <h1 className="text-[2rem]">Principales caracteristicas:</h1>
+            <article className="flex flex-col items-start text-left">
+              <aside className="gap-16 grid grid-cols-2 pt-6">
+
+                <ul className="space-y-3 list-disc">
+                  <li className="">Guardá clientes y productos sin límites.</li>
+                  <li className="">Cree fácil facturas digitales, electrónicas</li>
+                  <li className="">Verifica el stock en tiempo real</li>
+                  <li className="">Lleva el cuenta corriente de cliente y provedores</li>
+                  <li className="">Aumenta el precio de tus productos de forma masiva</li>
+                </ul>
+                <ul className="space-y-3 list-disc">
+                  <li className="">Genere libro de iva rapidamente</li>
+                  <li className="">Revise estadisticas se su Empresa</li>
+                  <li className="">Gestion de cajas</li>
+                  <li className="">Importacion y exportacion de productos y clientes</li>
+                  <li className="">Genere presupuestos</li>
+                </ul>
+              </aside>
             </article>
+                <ul className="flex justify-center items-center pt-3 list-disc">
+                  <li className="">Maneje deferentes listas de precios</li>
+                </ul>
           </div>
         </div>
       </div>

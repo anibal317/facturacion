@@ -35,11 +35,11 @@
       "isStrikethrough": false
     },
     {
-      "icon": "Unlock",
+      "icon": "FilePenLine",
       "title": "Sin contratos",
       "description": "No pedimos un periodo mínimo de permanencia.",
       "color": "text-blue-600",
-      "isStrikethrough": false
+      "isStrikethrough": true
     },
     {
       "icon": "XCircle",
