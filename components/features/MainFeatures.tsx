@@ -15,7 +15,7 @@ export default function MainFeatures() {
           throw new Error("Error fetching features");
         }
         const data = await response.json();
-        setFeatures(data); // Asumiendo que el endpoint devuelve un array de características
+        setFeatures(data.data); // Asumiendo que el endpoint devuelve un array de características
       } catch (error: any) {
         setError(error.message);
       } finally {

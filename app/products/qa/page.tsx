@@ -30,7 +30,7 @@ export default function Page() {
                     throw new Error("Error fetching FAQs");
                 }
                 const data = await response.json();
-                setFaqs(data); // Asumiendo que el endpoint devuelve un array de FAQs
+                setFaqs(data.data); // Asumiendo que el endpoint devuelve un array de FAQs
             } catch (error:any) {
                 setError(error.message);
             } finally {

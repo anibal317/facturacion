@@ -1,8 +1,8 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react';
 
 interface Logo {
@@ -34,6 +34,7 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({ variant }) => {
   const [navData, setNavData] = useState<NavData | null>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState('');
 
   useEffect(() => {
     const fetchNavData = async () => {
@@ -45,7 +46,6 @@ const Navbar: React.FC<NavbarProps> = ({ variant }) => {
 
         const data = await res.json();
 
-        // Mapear datos al formato esperado
         const mappedData: NavData = {
           home: mapSectionToNavData(data.find((section: any) => section.section === 'HOME')),
           feature: mapSectionToNavData(data.find((section: any) => section.section === 'FEATURE')),
@@ -58,6 +58,7 @@ const Navbar: React.FC<NavbarProps> = ({ variant }) => {
     };
 
     fetchNavData();
+    setActiveLink(window.location.pathname);
   }, []);
 
   const mapSectionToNavData = (section: any) => {
@@ -68,7 +69,7 @@ const Navbar: React.FC<NavbarProps> = ({ variant }) => {
         href: section.logoHref,
       },
       links: section.link
-        .filter((link: any) => link.enabled) // Filtrar solo enlaces habilitados
+        .filter((link: any) => link.enabled)
         .map((link: any) => ({
           text: link.text,
           href: link.href,
@@ -99,7 +100,13 @@ const Navbar: React.FC<NavbarProps> = ({ variant }) => {
           </Link>
           <div className="lg:flex space-x-4 hidden">
             {links.map((link) => (
-              <Link key={link.href} href={link.href} className="text-sm lg:text-base hover:underline">
+              <Link 
+                key={link.href} 
+                href={link.href} 
+                className={`text-sm lg:text-base hover:underline py-2 px-3 ${
+                  activeLink === link.href ? 'bg-opacity-20 bg-black border-b-2 border-white' : ''
+                }`}
+              >
                 {link.text}
               </Link>
             ))}
@@ -116,8 +123,13 @@ const Navbar: React.FC<NavbarProps> = ({ variant }) => {
               <Link
                 key={link.href}
                 href={link.href}
-                className="block hover:bg-[#5a7290] px-3 py-2 rounded-md font-medium text-sm hover:text-white"
-                onClick={toggleMenu}
+                className={`block hover:bg-[#5a7290] px-3 py-2 rounded-md font-medium text-sm hover:text-white ${
+                  activeLink === link.href ? 'bg-opacity-20 bg-black border-b-2 border-white' : ''
+                }`}
+                onClick={() => {
+                  toggleMenu();
+                  setActiveLink(link.href);
+                }}
               >
                 {link.text}
               </Link>
@@ -130,3 +142,4 @@ const Navbar: React.FC<NavbarProps> = ({ variant }) => {
 };
 
 export default Navbar;
+

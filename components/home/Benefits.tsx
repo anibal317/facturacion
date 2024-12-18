@@ -18,7 +18,7 @@ export default function Benefits() {
           throw new Error("Error fetching benefits");
         }
         const data = await response.json();
-        setBenefits(data); // Asumiendo que el endpoint devuelve un array de beneficios
+        setBenefits(data.data); // Asumiendo que el endpoint devuelve un array de beneficios
       } catch (error: any) {
         setError(error.message);
       } finally {
