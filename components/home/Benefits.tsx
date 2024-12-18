@@ -1,11 +1,37 @@
 'use client'
 
 import { Feature } from "../../types/iconTypes";
-import benefits from "../../data/mainBenefits.json";
 import { FeatureCard } from "../featureCard/FeatureCard";
 import Image from 'next/image';
+import { useEffect, useState } from "react";
 
 export default function Benefits() {
+  const [benefits, setBenefits] = useState<Feature[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchBenefits = async () => {
+      try {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/benefits?sec=home`);
+        if (!response.ok) {
+          throw new Error("Error fetching benefits");
+        }
+        const data = await response.json();
+        setBenefits(data); // Asumiendo que el endpoint devuelve un array de beneficios
+      } catch (error: any) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchBenefits();
+  }, []);
+
+  if (loading) return <div>Cargando...</div>;
+  if (error) return <div>Error: {error}</div>;
+
   return (
     <div id="benefits" className="relative py-16 lg:py-24">
       <div className="absolute inset-0 overflow-hidden">
@@ -38,4 +64,3 @@ export default function Benefits() {
     </div>
   );
 }
-

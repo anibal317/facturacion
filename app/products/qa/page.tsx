@@ -25,7 +25,7 @@ export default function Page() {
     useEffect(() => {
         const fetchFAQs = async () => {
             try {
-                const response = await fetch("https://facturacion-admin.onrender.com/api/faqs");
+                const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/faqs`);
                 if (!response.ok) {
                     throw new Error("Error fetching FAQs");
                 }

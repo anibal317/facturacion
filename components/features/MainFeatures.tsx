@@ -1,12 +1,36 @@
 import { Feature } from "../../types/iconTypes";
-import featuresData from "../../data/benefitsData.json";
 import { FeatureCard } from "../featureCard/FeatureCard";
+import { useEffect, useState } from "react";
 
 export default function MainFeatures() {
-  const features: Feature[] = featuresData as Feature[];
+  const [features, setFeatures] = useState<Feature[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchFeatures = async () => {
+      try {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/benefits?sec=feature`);
+        if (!response.ok) {
+          throw new Error("Error fetching features");
+        }
+        const data = await response.json();
+        setFeatures(data); // Asumiendo que el endpoint devuelve un array de características
+      } catch (error: any) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchFeatures();
+  }, []);
+
+  if (loading) return <div>Cargando...</div>;
+  if (error) return <div>Error: {error}</div>;
 
   if (features.length === 0) {
-    console.error("No se encontraron características en mainBenefits.json");
+    console.error("No se encontraron características en el endpoint");
     return null;
   }
 
@@ -30,4 +54,3 @@ export default function MainFeatures() {
     </div>
   );
 }
-

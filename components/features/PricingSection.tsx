@@ -11,7 +11,7 @@ export default function PricingSection() {
   useEffect(() => {
     const fetchPlans = async () => {
       try {
-        const response = await fetch("https://facturacion-admin.onrender.com/api/plans", {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/plans`, {
           method: "GET",
           redirect: "follow",
         });
