@@ -30,7 +30,7 @@ interface Data {
     [key: string]: Section;
 }
 
-const FeaturesAccordion: React.FC = () => {
+const FeatureSection: React.FC = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [currentVideoLink, setCurrentVideoLink] = useState('');
 
@@ -99,7 +99,7 @@ const FeaturesAccordion: React.FC = () => {
     };
 
     return (
-        <Layout variant='feature'>
+        <section id='featureSection'>
             <div className="mx-auto px-4 py-8 w-full max-w-7xl">
                 <div className="gap-8 grid grid-cols-1 md:grid-cols-2">
                     {renderAccordionColumn(entries.slice(0, midpoint))}
@@ -121,9 +121,9 @@ const FeaturesAccordion: React.FC = () => {
                     ></iframe>
                 }
             />
-        </Layout>
+        </section>
     );
 };
 
-export default FeaturesAccordion;
+export default FeatureSection;
 

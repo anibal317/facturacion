@@ -1,5 +1,4 @@
 'use client'
-import Layout from "@/components/layout/Layout";
 import Spinner from "@/components/spinner/Spinner";
 import {
     Accordion,
@@ -17,7 +16,7 @@ interface FAQ {
     answer: string;
 }
 
-export default function Page() {
+export default function Faqs() {
     const [faqs, setFaqs] = useState<FAQ[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
@@ -45,8 +44,7 @@ export default function Page() {
     if (error) return <div>Error: {error}</div>;
 
     return (
-        <Layout variant='feature'>
-            <div className="flex justify-center items-center pt-16 pb-16 divide-y divide-dashed">
+            <section id="faqs" className="flex justify-center items-center pt-16 pb-16 divide-y divide-dashed">
                 <Accordion type="single" collapsible className="w-3/4">
                     {faqs.map((faq) => (
                         <AccordionItem key={faq.value} value={faq.value}>
@@ -57,7 +55,6 @@ export default function Page() {
                         </AccordionItem>
                     ))}
                 </Accordion>
-            </div>
-        </Layout>
+            </section>
     );
 }
