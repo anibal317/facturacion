@@ -1,6 +1,7 @@
 import { Feature } from "../../types/iconTypes";
 import { FeatureCard } from "../featureCard/FeatureCard";
 import { useEffect, useState } from "react";
+import Spinner from "../spinner/Spinner";
 
 export default function MainFeatures() {
   const [features, setFeatures] = useState<Feature[]>([]);
@@ -26,7 +27,7 @@ export default function MainFeatures() {
     fetchFeatures();
   }, []);
 
-  if (loading) return <div>Cargando...</div>;
+  if (loading) return <Spinner/>;
   if (error) return <div>Error: {error}</div>;
 
   if (features.length === 0) {

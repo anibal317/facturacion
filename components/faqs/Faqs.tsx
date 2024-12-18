@@ -44,7 +44,7 @@ export default function Faqs() {
     if (error) return <div>Error: {error}</div>;
 
     return (
-            <section id="faqs" className="flex justify-center items-center pt-16 pb-16 divide-y divide-dashed">
+            <section id="faqs" className="flex justify-center items-center bg-[#CCE2CB] pt-16 pb-16 divide-y divide-dashed">
                 <Accordion type="single" collapsible className="w-3/4">
                     {faqs.map((faq) => (
                         <AccordionItem key={faq.value} value={faq.value}>

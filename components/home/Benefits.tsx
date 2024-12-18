@@ -4,6 +4,7 @@ import { Feature } from "../../types/iconTypes";
 import { FeatureCard } from "../featureCard/FeatureCard";
 import Image from 'next/image';
 import { useEffect, useState } from "react";
+import Spinner from "../spinner/Spinner";
 
 export default function Benefits() {
   const [benefits, setBenefits] = useState<Feature[]>([]);
@@ -29,7 +30,7 @@ export default function Benefits() {
     fetchBenefits();
   }, []);
 
-  if (loading) return <div>Cargando...</div>;
+  if (loading) return <Spinner/>;
   if (error) return <div>Error: {error}</div>;
 
   return (

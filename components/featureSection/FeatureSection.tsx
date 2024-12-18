@@ -1,6 +1,6 @@
 "use client";
-import { Button } from "@/components/ui/button"
-import { useState } from 'react';
+import { Button } from "@/components/ui/button";
+import { useState, useEffect } from 'react';
 import React from "react";
 import {
     Accordion,
@@ -15,8 +15,6 @@ import {
     CardDescription,
     CardContent,
 } from "@/components/ui/card";
-import features from "@/data/features.json";
-import Layout from "@/components/layout/Layout";
 import Modal from "@/components/modal/Modal";
 
 interface Section {
@@ -33,8 +31,41 @@ interface Data {
 const FeatureSection: React.FC = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [currentVideoLink, setCurrentVideoLink] = useState('');
+    const [data, setData] = useState<Data>({}); // Estado para almacenar los datos de la API
+    const [loading, setLoading] = useState(true); // Estado para manejar la carga
 
-    const data: Data = features;
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/features`);
+                const result = await response.json();
+                const formattedData: Data = {};
+                
+                // Formatear los datos para que coincidan con la estructura esperada
+                result.forEach((feature: any) => {
+                    formattedData[feature.title] = {
+                        description: feature.description,
+                        items: feature.item.map((item: any) => {
+                            return item.other_item.length > 0 ? {
+                                [item.text]: item.other_item.map((subItem: any) => subItem.text)
+                            } : item.text;
+                        }),
+                        video: feature.video,
+                        videoLink: feature.videoLink,
+                    };
+                });
+
+                setData(formattedData);
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchData();
+    }, []);
+
     const entries = Object.entries(data);
     const midpoint = Math.ceil(entries.length / 2);
 
@@ -80,7 +111,7 @@ const FeatureSection: React.FC = () => {
                                                 className="mt-4"
                                                 variant="outline"
                                             >
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className="text-red-600 fill-current"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path></svg> Ver Video
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className="text-red-600 fill-current"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3. 897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path></svg> Ver Video
                                             </Button>
                                         </div>
                                     )}
@@ -97,6 +128,10 @@ const FeatureSection: React.FC = () => {
         setCurrentVideoLink(videoLink);
         setIsModalOpen(true);
     };
+
+    if (loading) {
+        return <div>Cargando...</div>; // Mensaje de carga
+    }
 
     return (
         <section id='featureSection'>
@@ -126,4 +161,3 @@ const FeatureSection: React.FC = () => {
 };
 
 export default FeatureSection;
-

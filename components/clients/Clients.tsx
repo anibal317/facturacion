@@ -1,6 +1,7 @@
 'use client'
 import { useEffect, useState } from "react";
 import Carousel from "../carousel/Carousel";
+import Spinner from "../spinner/Spinner";
 
 interface Client {
     id: number;
@@ -35,7 +36,7 @@ export default function Clients() {
         fetchClients();
     }, []);
 
-    if (loading) return <div className="flex justify-center items-center w-full h-full">Cargando...</div>;
+    if (loading) return <Spinner/>;
     if (error) return <div>Error: {error}</div>;
 
     return (
