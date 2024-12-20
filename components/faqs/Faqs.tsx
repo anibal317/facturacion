@@ -30,7 +30,7 @@ export default function Faqs() {
                 }
                 const data = await response.json();
                 setFaqs(data.data); // Asumiendo que el endpoint devuelve un array de FAQs
-            } catch (error:any) {
+            } catch (error: any) {
                 setError(error.message);
             } finally {
                 setLoading(false);
@@ -40,12 +40,14 @@ export default function Faqs() {
         fetchFAQs();
     }, []);
 
-    if (loading) return (<div className="flex justify-center items-center w-screen h-full"><Spinner/></div>);
+    if (loading) return (<div className="flex justify-center items-center w-screen h-full"><Spinner /></div>);
     if (error) return <div>Error: {error}</div>;
 
     return (
-            <section id="faqs" className="flex justify-center items-center bg-[#CCE2CB] pt-16 pb-16 divide-y divide-dashed">
-                <Accordion type="single" collapsible className="w-3/4">
+        <section id="faqs" className="flex justify-center items-center bg-[#CCE2CB] pt-16 pb-16 divide-y divide-dashed">
+            <div className="mx-auto px-4 container">
+                <h2 className="mb-12 font-bold text-3xl text-center sm:text-5xl tracking-tighter">Preguntas Frecuentes</h2>
+                <Accordion type="single" collapsible className="content-center">
                     {faqs.map((faq) => (
                         <AccordionItem key={faq.value} value={faq.value}>
                             <AccordionTrigger>{faq.question}</AccordionTrigger>
@@ -55,6 +57,7 @@ export default function Faqs() {
                         </AccordionItem>
                     ))}
                 </Accordion>
-            </section>
+            </div>
+        </section>
     );
 }

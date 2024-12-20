@@ -20,8 +20,8 @@ export default function page() {
                 <MainSection />
                 <MainFeatures />
                 <PricingSection />
-                <Faqs />
                 <FeatureSection />
+                <Faqs />
                 <Contacto />
             </section>
             <Whatsapp phoneNumber="2314405020" positionX="40px" positionY="50px" />

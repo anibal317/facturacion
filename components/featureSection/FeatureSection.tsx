@@ -106,11 +106,14 @@ const FeatureSection: React.FC = () => {
     };
 
     return (
-        <section id='featureSection'>
-            <div className="mx-auto px-4 py-8 w-full max-w-7xl">
-                <div className="gap-8 grid grid-cols-1 md:grid-cols-2">
-                    {renderAccordionColumn (features.slice(0, midpoint))}
-                    {renderAccordionColumn(features.slice(midpoint))}
+        <section id='featureSection'  className="flex justify-center items-center pt-16 pb-16 divide-y divide-dashed">
+            <div className="mx-auto px-4 container">
+                <h2 className="mb-12 font-bold text-3xl text-center sm:text-5xl tracking-tighter">Funcionalidades</h2>
+                <div className="mx-auto px-4 py-8 w-full max-w-7xl">
+                    <div className="gap-8 grid grid-cols-1 md:grid-cols-2">
+                        {renderAccordionColumn(features.slice(0, midpoint))}
+                        {renderAccordionColumn(features.slice(midpoint))}
+                    </div>
                 </div>
             </div>
             <Modal

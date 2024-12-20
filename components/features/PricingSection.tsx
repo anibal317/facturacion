@@ -43,8 +43,7 @@ export default function PricingSection() {
   if (error) {
     return (
       <section id="precios" className="flex justify-center bg-[#cbd1d7] py-12 md:py-24 lg:py-20">
-        <h2 className="mb-12 font-bold text-3xl text-center sm:text-5xl tracking-tighter">Nuestros Planes</h2>
-        
+
         <div className="flex flex-wrap justify-center gap-8">
           {[...Array(3)].map((_, index) => (
             <Skeleton key={index} />
@@ -56,10 +55,17 @@ export default function PricingSection() {
 
   return (
     <section id="precios" className="flex justify-center bg-[#cbd1d7] py-12 md:py-24 lg:py-20">
-      <div className="flex flex-wrap justify-center gap-8">
-        {plans.map((plan: PricingPlan) => (
-          <PricingCard key={plan.id} plan={plan} />
-        ))}
+
+      <div className="mx-auto px-4 container">
+        <h2 className="mb-12 font-bold text-3xl text-center sm:text-5xl tracking-tighter">Nuestos Planes</h2>
+        <div className="gap-6 lg:gap-12 grid md:grid-cols-2 lg:grid-cols-3">
+
+          {plans.map((plan: PricingPlan) => (
+            <PricingCard key={plan.id} plan={plan} />
+          ))}
+        </div>
+        <p className="pt-6 font-semibold text-2xs text-center md:text-2xl">Contactenos, y un asesor comercial, lo guiará para escoger el mejor plan.</p>
+
       </div>
     </section>
   );

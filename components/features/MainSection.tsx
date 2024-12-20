@@ -21,13 +21,15 @@ export default function MainSection() {
               <aside className="gap-16 grid grid-cols-2 pt-6">
 
                 <ul className="space-y-3 list-disc">
+                  <li className="">Facturación Electrónica</li>
                   <li className="">Guardá clientes y productos sin límites.</li>
                   <li className="">Cree fácil facturas digitales, electrónicas</li>
                   <li className="">Verifica el stock en tiempo real</li>
                   <li className="">Lleva el cuenta corriente de cliente y provedores</li>
-                  <li className="">Aumenta el precio de tus productos de forma masiva</li>
+                  <li className="">Maneje deferentes listas de precios</li>
                 </ul>
                 <ul className="space-y-3 list-disc">
+                  <li className="">Aumenta el precio de tus productos de forma masiva</li>
                   <li className="">Genere libro de iva rapidamente</li>
                   <li className="">Revise estadisticas se su Empresa</li>
                   <li className="">Gestion de cajas</li>
@@ -36,9 +38,6 @@ export default function MainSection() {
                 </ul>
               </aside>
             </article>
-                <ul className="flex justify-center items-center pt-3 list-disc">
-                  <li className="">Maneje deferentes listas de precios</li>
-                </ul>
           </div>
         </div>
       </div>

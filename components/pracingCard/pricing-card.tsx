@@ -63,10 +63,10 @@ export function PricingCard({ plan }: PricingCardProps) {
 
   return (
     <div
-      className={`border-2 ${
-        plan.isRecommended ? "bg-gray-600" : "bg-white"
-      } border-blue-600 rounded-lg w-[370px] overflow-hidden`}
+      className={`border-2 ${plan.isRecommended ? "bg-gray-600" : "bg-white"
+        } border-blue-600 rounded-lg w-[370px] overflow-hidden`}
     >
+
       {/* Banner de "Más Elegido" */}
       {plan.isRecommended ? (
         <div className="flex justify-between items-center bg-[#007bff] px-4 py-1 text-white recommended-badge">
@@ -79,6 +79,7 @@ export function PricingCard({ plan }: PricingCardProps) {
 
       {/* Contenido del Plan */}
       <div className={`p-6 ${plan.isRecommended ? "bg-gray-600 text-white" : "bg-white"}`}>
+
         <div className="mb-6 text-center">
           <h2 className={`text-xl font-bold ${plan.isRecommended ? "text-white" : "text-gray-600"}`}>
             {plan.title}
@@ -100,18 +101,19 @@ export function PricingCard({ plan }: PricingCardProps) {
             Puntos de venta: {typeof plan.purchasePoints === "number" ? plan.purchasePoints : plan.purchasePoints}
           </span>
         </div>
-        <button
+        {/* <button
           onClick={handleOpenModal}
           className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-md w-full text-white"
         >
           Continuar
-        </button>
-        <Modal
+        </button> */}
+        {/* <Modal
           isOpen={showModal}
           onClose={handleCloseModal}
           title={`Detalles del plan ${plan.title}`}
           content={modalContent}
-        />
+        /> */}
+        
       </div>
     </div>
   );
