@@ -43,6 +43,8 @@ export default function PricingSection() {
   if (error) {
     return (
       <section id="precios" className="flex justify-center bg-[#cbd1d7] py-12 md:py-24 lg:py-20">
+        <h2 className="mb-12 font-bold text-3xl text-center sm:text-5xl tracking-tighter">Nuestros Planes</h2>
+        
         <div className="flex flex-wrap justify-center gap-8">
           {[...Array(3)].map((_, index) => (
             <Skeleton key={index} />
