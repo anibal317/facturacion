@@ -63,7 +63,7 @@ export default function Carousel({ images, speed = 50 }: CarouselProps) {
             >
                 {images.map((src, index) => (
                     <div key={index} className="flex-shrink-0 p-2 w-[170px] lg:w-[350px]">
-                        <a href={src.link} target='_blank'><img
+                        <a href={src.link} target={src.link !='#' ?'_blank':''}><img
                             src={src.img}
                             alt={src.name}
                             className="rounded-[15px] w-[160px] lg:w-[350px] h-[160px] lg:h-[350px] object-cover"
