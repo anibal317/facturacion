@@ -1,7 +1,7 @@
 
 export default function WhatCanDo() {
   return (
-    <section id='actions' className="relative bg-gradient-to-b from-blue-50 to-white py-20 h-screen">
+    <section id='actions' className="relative flex flex-col justify-center items-center bg-gradient-to-b from-blue-50 to-white py-20 h-screen cursor-default">
       <div className="absolute inset-0 bg-[url('/backgrounds/wave-pattern.svg')] bg-no-repeat h-[400%]" />
       <div className="relative z-10 mx-auto px-4 container">
         <h2 className="mb-12 font-bold text-3xl text-blue-900 text-center md:text-4xl">

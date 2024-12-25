@@ -42,9 +42,10 @@ export default function PricingSection() {
 
   if (error) {
     return (
-      <section id="precios" className="flex justify-center bg-[#cbd1d7] py-12 md:py-24 lg:py-20">
+      <section id="precios" className="relative flex justify-center py-12 md:py-24 lg:py-20 w-full h-screen text-b">
 
-        <div className="flex flex-wrap justify-center gap-8">
+
+        <div className="relative flex flex-wrap justify-center gap-8">
           {[...Array(3)].map((_, index) => (
             <Skeleton key={index} />
           ))}
@@ -54,9 +55,10 @@ export default function PricingSection() {
   }
 
   return (
-    <section id="precios" className="flex justify-center bg-[#cbd1d7] py-12 md:py-24 lg:py-20">
+    <section id="precios" className="relative flex justify-center py-12 md:py-24 lg:py-20">
+      <div className="absolute inset-0 bg-[url('/backgrounds/faqs.svg')] bg-no-repeat-y" />
 
-      <div className="mx-auto px-4 container">
+      <div className="relative mx-auto px-4 container">
         <h2 className="mb-12 font-bold text-3xl text-center sm:text-5xl tracking-tighter">Nuestos Planes</h2>
         <div className="content-center gap-3 lg:gap-12 xs:gap-6 grid md:grid-cols-2 lg:grid-cols-3">
 

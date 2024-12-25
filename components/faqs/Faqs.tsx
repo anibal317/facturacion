@@ -40,23 +40,26 @@ export default function Faqs() {
         fetchFAQs();
     }, []);
 
-    if (loading) return (<div className="flex justify-center items-center w-screen h-full"><Spinner /></div>);
+    if (loading) return (<div className="absolute flex justify-center items-center"><Spinner /></div>);
     if (error) return <div>Error: {error}</div>;
 
     return (
-        <section id="faqs" className="flex justify-center items-center bg-[#CCE2CB] pt-16 pb-16 divide-y divide-dashed">
-            <div className="mx-auto px-4 container">
-                <h2 className="mb-12 font-bold text-3xl text-center sm:text-5xl tracking-tighter">Preguntas Frecuentes</h2>
-                <Accordion type="single" collapsible className="content-center">
-                    {faqs.map((faq) => (
-                        <AccordionItem key={faq.value} value={faq.value}>
-                            <AccordionTrigger>{faq.question}</AccordionTrigger>
-                            <AccordionContent>
-                                <div dangerouslySetInnerHTML={{ __html: faq.answer }} />
-                            </AccordionContent>
-                        </AccordionItem>
-                    ))}
-                </Accordion>
+        <section id="faqs" className="relative flex justify-center items-center bg-gradient-to-r from-white to-blue-50 pt-16 pb-16 divide-y divide-dashed w-full h-screen">
+            <div className="absolute inset-0 bg-[url('/backgrounds/page-turner.svg')] bg-no-repeat w-screen" />
+            <div className="relative mx-auto px-4 container">
+                <div className="mx-auto px-4 container">
+                    <h2 className="mb-12 font-bold text-3xl text-center sm:text-5xl tracking-tighter">Preguntas Frecuentes</h2>
+                    <Accordion type="single" collapsible className="content-center">
+                        {faqs.map((faq) => (
+                            <AccordionItem key={faq.value} value={faq.value}>
+                                <AccordionTrigger>{faq.question}</AccordionTrigger>
+                                <AccordionContent>
+                                    <div dangerouslySetInnerHTML={{ __html: faq.answer }} />
+                                </AccordionContent>
+                            </AccordionItem>
+                        ))}
+                    </Accordion>
+                </div>
             </div>
         </section>
     );

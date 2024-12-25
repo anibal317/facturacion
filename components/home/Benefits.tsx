@@ -35,6 +35,7 @@ export default function Benefits() {
 
   return (
     <section id="benefits" className="relative flex flex-col justify-center items-center py-16 lg:py-24 h-screen">
+       
         <div className="absolute inset-0 bg-[url('/backgrounds/circuit-board.svg')] bg-no-repeat-y w-screen" />
         <div className="relative mx-auto px-4 container">
 

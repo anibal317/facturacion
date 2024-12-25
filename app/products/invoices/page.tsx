@@ -13,10 +13,11 @@ export default function page() {
     useEffect(() => {
         // Aplicar la clase scroll-smooth al elemento html
         document.documentElement.classList.add('scroll-smooth')
+        document.documentElement.classList.add('overflow-x-hidden')
     }, [])
     return (
         <Layout variant='feature'>
-            <section>
+            <section >
                 <MainSection />
                 <MainFeatures />
                 <PricingSection />

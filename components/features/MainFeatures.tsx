@@ -27,7 +27,7 @@ export default function MainFeatures() {
     fetchFeatures();
   }, []);
 
-  if (loading) return <Spinner/>;
+  if (loading) return <Spinner />;
   if (error) return <div>Error: {error}</div>;
 
   if (features.length === 0) {
@@ -36,8 +36,10 @@ export default function MainFeatures() {
   }
 
   return (
-    <div id="caracteristicas" className="bg-[#72a9e8] dark:bg-gray-800 py-12 md:py-24 lg:py-32">
-      <div className="mx-auto px-4 container">
+    <section id="caracteristicas" className="relative py-12 md:py-24 lg:py-32 w-full h-screen">
+      <div className="absolute inset-0 bg-[url('/backgrounds/circuit-board.svg')] bg-cover bg-no-repeat-y" />
+
+      <div className="relative mx-auto px-4 container">
         <h2 className="mb-12 font-bold text-3xl text-center sm:text-5xl tracking-tighter">Características Principales</h2>
         <div className="gap-6 lg:gap-12 grid md:grid-cols-2 lg:grid-cols-3">
           {features.map((feature, index) => (
@@ -52,6 +54,6 @@ export default function MainFeatures() {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }

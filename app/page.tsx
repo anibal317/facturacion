@@ -11,8 +11,8 @@ export default function Home() {
 
   return (
     <Layout variant="home">
-      <div className="flex flex-col scroll-smooth">
-        <main className="flex flex-col mt-8 min-w-screen scroll-smooth">
+      <div className="flex flex-col overflow-hidden scroll-smooth">
+        <main className="flex flex-col mt-8 scroll-smooth">
           <Welcoming />
           <WhatCanDo />
           <Benefits />
