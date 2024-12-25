@@ -81,13 +81,13 @@ export default function Contacto() {
 
 
   return (
-    <div id="contacto" className="flex flex-col justify-center items-center bg-[#a0aab6] p-2 pt-12 h-auto">
-      <div className="bg-[#FFFFFF] md:px-6 pt-2 md:pt-10 md:pb-6 md:rounded-[25px] md:w-4/6">
+    <div id="contacto" className="flex flex-col justify-center items-center p-2 pt-12 h-screen">
+      <div className="bg-[#FFFFFF] md:px-6 pt-2 md:pt-10 md:pb-6 md:w-4/6">
         <p className="md:pb-4 font-semibold text-center text-xs md:text-xl">Horario de atención por consultas de 13hs a 17hs</p>
         <div className="flex lg:flex-row flex-col-reverse">
           <div>
           </div>
-          <div id="dialogo" className="bg-[#EFEFEF] md:mt-2 lg:mt-0 lg:mr-2 p-6 md:rounded-[15px] lg:rounded-[25px] lg:w-1/2">
+          <div id="dialogo" className="bg-[#EFEFEF] md:mt-2 lg:mt-0 lg:mr-2 p-6 lg:w-1/2">
             {!isSend ? <>
               <h1 className="mb-4 font-bold text-[#1E1E1E] text-3xl arima">
                 Contacto
@@ -102,7 +102,7 @@ export default function Contacto() {
               >
                 <div className="mb-4">
                   <input
-                    className="focus:shadow-outline px-3 py-2 border rounded-xl w-full text-gray-700 leading-tight focus:outline-none"
+                    className="focus:shadow-outline px-3 py-2 border w-full text-gray-700 leading-tight focus:outline-none"
                     id="nombre"
                     type="text"
                     name="nombre"
@@ -114,7 +114,7 @@ export default function Contacto() {
                 </div>
                 <div className="mb-4">
                   <input
-                    className="focus:shadow-outline px-3 py-2 border rounded-xl w-full text-gray-700 leading-tight focus:outline-none"
+                    className="focus:shadow-outline px-3 py-2 border w-full text-gray-700 leading-tight focus:outline-none"
                     id="apellido"
                     type="text"
                     name="apellido"
@@ -126,7 +126,7 @@ export default function Contacto() {
                 </div>
                 <div className="mb-4">
                   <input
-                    className="focus:shadow-outline px-3 py-2 border rounded-xl w-full text-gray-700 leading-tight focus:outline-none"
+                    className="focus:shadow-outline px-3 py-2 border w-full text-gray-700 leading-tight focus:outline-none"
                     id="email"
                     type="email"
                     name="email"
@@ -142,7 +142,7 @@ export default function Contacto() {
                     name="descripcion"
                     placeholder="Escribí tu consulta"
                     required
-                    className="focus:shadow-outline px-3 py-2 border rounded-xl w-full h-32 text-gray-700 leading-tight focus:outline-none"
+                    className="focus:shadow-outline px-3 py-2 border w-full h-32 text-gray-700 leading-tight focus:outline-none"
                     value={descripcion}
                     onChange={(e) => setDescripcion(e.target.value)}
                   />
@@ -150,7 +150,7 @@ export default function Contacto() {
 
                 <div className="mb-6 w-[20%]">
                   <button id="btEnviarContac"
-                    className={`${isEnabled ? 'btn-enable' : 'btn-disable'} w-full lg:w-auto font-bold px-8 py-3 rounded-xl focus:outline-none focus:shadow-outline`}
+                    className={`${isEnabled ? 'btn-enable' : 'btn-disable'} w-full lg:w-auto font-bold px-8 py-3 focus:outline-none focus:shadow-outline border-x-black border-y-black border-x-2 border-y-2 `}
                     type="submit"
                   >
                     Enviar
@@ -168,7 +168,7 @@ export default function Contacto() {
               </>
             }
           </div>
-          <div id="imgDeJovenes" className={`mt-2 md:mt-0 md:rounded-[15px] lg:rounded-[25px] h-28 lg:h-auto md:mb-2 lg:mb-0 lg:ml-2 w-full lg:w-1/2 bg-cover bg-center ${isSend ? "bg-[url('/imgs/contacto/contacto_ok.webp')]" : "bg-[url('/imgs/contacto/contacto.webp')]"}`}>
+          <div id="imgDeJovenes" className={`mt-2 md:mt-0  h-28 lg:h-auto md:mb-2 lg:mb-0 lg:ml-2 w-full lg:w-1/2 bg-cover bg-center ${isSend ? "bg-[url('/imgs/contacto/contacto_ok.webp')]" : "bg-[url('/imgs/contacto/contacto.webp')]"}`}>
 
           </div>
         </div>

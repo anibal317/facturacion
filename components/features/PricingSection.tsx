@@ -58,7 +58,7 @@ export default function PricingSection() {
 
       <div className="mx-auto px-4 container">
         <h2 className="mb-12 font-bold text-3xl text-center sm:text-5xl tracking-tighter">Nuestos Planes</h2>
-        <div className="gap-6 lg:gap-12 grid md:grid-cols-2 lg:grid-cols-3">
+        <div className="content-center gap-3 lg:gap-12 xs:gap-6 grid md:grid-cols-2 lg:grid-cols-3">
 
           {plans.map((plan: PricingPlan) => (
             <PricingCard key={plan.id} plan={plan} />

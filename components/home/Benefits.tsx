@@ -30,24 +30,15 @@ export default function Benefits() {
     fetchBenefits();
   }, []);
 
-  if (loading) return <Spinner/>;
+  // if (loading) return <Spinner/>;
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <div id="benefits" className="relative py-16 lg:py-24">
-      <div className="absolute inset-0 overflow-hidden">
-        <Image
-          src="/choices.webp"
-          alt="Background"
-          fill
-          style={{ objectFit: 'cover' }}
-          quality={100}
-          priority
-        />
-        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-      </div>
-      <div className="relative z-10 mx-auto px-4 container">
-        <h2 className="mb-12 font-bold text-3xl text-center text-white lg:text-4xl">Nuestros Beneficios</h2>
+    <section id="benefits" className="relative flex flex-col justify-center items-center py-16 lg:py-24 h-screen">
+        <div className="absolute inset-0 bg-[url('/backgrounds/circuit-board.svg')] bg-no-repeat-y w-screen" />
+        <div className="relative mx-auto px-4 container">
+
+        <h2 className="mb-12 font-bold text-3xl text-center lg:text-4xl">Nuestros Beneficios</h2>
         <div className="justify-center items-center gap-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {benefits.map((benefit: Feature, index) => (
             <FeatureCard
@@ -55,13 +46,13 @@ export default function Benefits() {
               icon={benefit.icon}
               title={benefit.title}
               description={benefit.description}
-              color={benefit.color}
+              // color={benefit.color}
               isStrikethrough={benefit.isStrikethrough}
-              className="bg-white bg-opacity-90 hover:bg-opacity-100 transition-all duration-300"
+              className="hover:bg-opacity-100 transition-all duration-300"
             />
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
