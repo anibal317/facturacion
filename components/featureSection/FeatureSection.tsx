@@ -52,7 +52,7 @@ const FeatureSection: React.FC = () => {
     const midpoint = Math.ceil(features.length / 2);
 
     const renderAccordionColumn = (columnEntries: Section[]) => (
-        <div className="mt-5 w-full h-screen">
+        <div className="mt-5 w-full">
             <Accordion type="single" collapsible className="w-full">
                 {columnEntries.map((details, index) => (
                     <AccordionItem key={details.id} value={`item-${index + 1}`}>
@@ -106,8 +106,7 @@ const FeatureSection: React.FC = () => {
     };
 
     return (
-        <section id='featureSection' className="flex justify-center items-center pt-16 pb-16 divide-y divide-dashed">
-
+        <section id='featureSection' className="flex flex-col justify-center items-center pt-16 pb-16 divide-y divide-dashed">
             <div className="mx-auto px-4 container">
                 <h2 className="mb-12 font-bold text-3xl text-center sm:text-5xl tracking-tighter">Funcionalidades</h2>
                 <div className="mx-auto px-4 py-8 w-full max-w-7xl">

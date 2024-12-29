@@ -2,9 +2,7 @@
 
 import { Feature } from "../../types/iconTypes";
 import { FeatureCard } from "../featureCard/FeatureCard";
-import Image from 'next/image';
 import { useEffect, useState } from "react";
-import Spinner from "../spinner/Spinner";
 
 export default function Benefits() {
   const [benefits, setBenefits] = useState<Feature[]>([]);
@@ -30,24 +28,22 @@ export default function Benefits() {
     fetchBenefits();
   }, []);
 
-  // if (loading) return <Spinner/>;
+  if (loading) return <div className="text-center">Cargando...</div>;
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <section id="benefits" className="relative flex flex-col justify-center items-center py-16 lg:py-24 h-screen">
-       
-        <div className="absolute inset-0 bg-[url('/backgrounds/circuit-board.svg')] bg-no-repeat-y w-screen" />
-        <div className="relative mx-auto px-4 container">
+    <section id="benefits" className="relative flex flex-col justify-center items-center py-16 lg:py-24">
+      <div className="absolute inset-0 bg-[url('/backgrounds/circuit-board.svg')] bg-no-repeat-y w-full h-full" />
+      <div className="relative mx-auto px-4 container">
 
         <h2 className="mb-12 font-bold text-3xl text-center lg:text-4xl">Nuestros Beneficios</h2>
-        <div className="justify-center items-center gap-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <div className="justify-center items-center gap-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
           {benefits.map((benefit: Feature, index) => (
             <FeatureCard
               key={index}
               icon={benefit.icon}
               title={benefit.title}
               description={benefit.description}
-              // color={benefit.color}
               isStrikethrough={benefit.isStrikethrough}
               className="hover:bg-opacity-100 transition-all duration-300"
             />

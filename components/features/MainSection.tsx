@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button"
 
 export default function MainSection() {
   return (
-    <section id="orderFlow" className="relative flex justify-center items-center py-12 md:py-24 lg:py-32 xl:py-48 h-screen">
+    <section id="orderFlow" className="relative flex justify-center items-center py-12 md:py-24 lg:py-32 xl:py-48 pt-64 h-screen">
       <div className="absolute inset-0 bg-[url('/backgrounds/grid-pattern.svg')] bg-cover bg-no-repeat bg-center"  />
       <div className="relative mx-auto px-4 container">
 

@@ -46,7 +46,7 @@ export default function Clients() {
                 alt="About Us"
                 className="absolute w-full h-full object-cover"
             />
-            <div className="relative z-10 flex flex-col gap-4 bg-[#ffffff] bg-opacity-50 shadow-xl pt-2 rounded-2xl">
+            <div className="relative z-10 flex flex-col bg-[#ffffff] bg-opacity-50 shadow-xl pt-2 rounded-2xl">
                 <h1 className="font-extrabold text-5xl text-blue-500 text-center">Hoy contamos con más de 250 clientes</h1>
                 <Carousel images={clients} speed={60} />
             </div>

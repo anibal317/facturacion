@@ -1,10 +1,11 @@
 'use client'
 
 import React, { useState, useEffect, useRef } from 'react'
+
 interface Client {
     id: number;
     img: string;
-    name:string;
+    name: string;
     link: string;
     active: boolean;
     ordering: number;
@@ -31,11 +32,9 @@ export default function Carousel({ images, speed = 50 }: CarouselProps) {
             setTranslateX(prev => {
                 const newTranslateX = prev - (speed / 60) * direction
                 if (direction === 1 && newTranslateX <= -totalWidth + container.clientWidth) {
-                    // Cambiar dirección cuando llegue al final
                     setDirection(-1)
                     return -totalWidth + container.clientWidth
                 } else if (direction === -1 && newTranslateX >= 0) {
-                    // Cambiar dirección cuando llegue al inicio
                     setDirection(1)
                     return 0
                 }
@@ -58,16 +57,20 @@ export default function Carousel({ images, speed = 50 }: CarouselProps) {
             
             <div
                 ref={containerRef}
-                className="flex transition-transform duration-100 ease-linear"
+                className="flex items-center transition-transform duration-100 ease-linear"
                 style={{ transform: `translateX(${translateX}px)` }}
             >
                 {images.map((src, index) => (
-                    <div key={index} className="flex-shrink-0 p-2 w-[170px] lg:w-[350px]">
-                        <a href={src.link} target={src.link !='#' ?'_blank':'_self'}><img
-                            src={src.img}
-                            alt={src.name}
-                            className="rounded-[15px] w-[160px] lg:w-[350px] h-[160px] lg:h-[350px] object-cover"
-                        /></a>
+                    <div key={index} className="flex flex-shrink-0 justify-center items-center p-2 w-[170px] lg:w-[350px] h-[150px] lg:h-[300px]">
+                        <a href={src.link} target={src.link !== '#' ? '_blank' : '_self'}>
+                            <div className="relative w-full h-full">
+                                <img
+                                    src={src.img}
+                                    alt={src.name}
+                                    className="rounded-[15px] w-full h-full object-cover"
+                                />
+                            </div>
+                        </a>
                     </div>
                 ))}
             </div>

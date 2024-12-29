@@ -44,22 +44,20 @@ export default function Faqs() {
     if (error) return <div>Error: {error}</div>;
 
     return (
-        <section id="faqs" className="relative flex justify-center items-center bg-gradient-to-r from-white to-blue-50 pt-16 pb-16 divide-y divide-dashed w-full h-screen">
-            <div className="absolute inset-0 bg-[url('/backgrounds/page-turner.svg')] bg-no-repeat w-screen" />
-            <div className="relative mx-auto px-4 container">
-                <div className="mx-auto px-4 container">
-                    <h2 className="mb-12 font-bold text-3xl text-center sm:text-5xl tracking-tighter">Preguntas Frecuentes</h2>
-                    <Accordion type="single" collapsible className="content-center">
-                        {faqs.map((faq) => (
-                            <AccordionItem key={faq.value} value={faq.value}>
-                                <AccordionTrigger>{faq.question}</AccordionTrigger>
-                                <AccordionContent>
-                                    <div dangerouslySetInnerHTML={{ __html: faq.answer }} />
-                                </AccordionContent>
-                            </AccordionItem>
-                        ))}
-                    </Accordion>
-                </div>
+        <section id="faqs" className="relative flex justify-center items-center bg-gradient-to-r from-white to-blue-50 pt-16 pb-16 divide-y divide-dashed w-full">
+            <div className="absolute inset-0 bg-[url('/backgrounds/page-turner.svg')] bg-transparent bg-cover bg-no-repeat w-full h-full" />
+            <div className="relative mx-auto px-4 max-w-7xl container">
+                <h2 className="mb-12 font-bold text-3xl text-center sm:text-5xl tracking-tighter">Preguntas Frecuentes</h2>
+                <Accordion type="single" collapsible className="w-full">
+                    {faqs.map((faq) => (
+                        <AccordionItem key={faq.value} value={faq.value}>
+                            <AccordionTrigger className="font-semibold text-lg">{faq.question}</AccordionTrigger>
+                            <AccordionContent>
+                                <div className="lg:prose-lg prose" dangerouslySetInnerHTML={{ __html: faq.answer }} />
+                            </AccordionContent>
+                        </AccordionItem>
+                    ))}
+                </Accordion>
             </div>
         </section>
     );
