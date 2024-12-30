@@ -10,7 +10,7 @@ interface WhatsappProps {
 export default function Whatsapp({ phoneNumber, positionX, positionY }: WhatsappProps) {
     return (
         <>
-            <Link href={`https://wa.me/+${phoneNumber}?`} style={{ bottom: positionY, right: positionX }} className="whatsapp" target="_blank" rel="noopener noreferrer">
+            <Link href={`https://wa.me/+${phoneNumber}?`} style={{ bottom: positionY, right: positionX }} className="z-50 float whatsapp" target="_blank" rel="noopener noreferrer">
                 <img
                     src="/whatsapp.png"
                     alt="Whatsapp Bolivar Software"

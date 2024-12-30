@@ -12,13 +12,14 @@ export default function Footer() {
     useEffect(() => {
         const fetchNavData = async () => {
             try {
-                const res = await fetch('/api/navLinks');
+                const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/navigation`);
                 if (!res.ok) {
                     throw new Error('Network response was not ok');
                 }
                 const data = await res.json();
+                console.log(data[0].link)
                 // Accede a los enlaces de la sección 'feature'
-                setFeatureLinks(data.feature.links.filter((link: NavLink) => link.enabled !== false));
+                setFeatureLinks(data[0].link.filter((link: NavLink) => link.enabled !== false));
             } catch (error) {
                 console.error('Error fetching nav data:', error);
             }

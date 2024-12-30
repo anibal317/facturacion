@@ -40,7 +40,7 @@ export default function Clients() {
     if (error) return <div>Error: {error}</div>;
 
     return (
-        <section id="clients" className="relative flex flex-col justify-center w-full h-screen overflow-hidden">
+        <section id="clients" className="relative z-8 flex flex-col justify-center w-full h-screen overflow-hidden">
             <img
                 src="./clients.jpeg"
                 alt="About Us"

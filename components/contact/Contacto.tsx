@@ -78,9 +78,11 @@ export default function Contacto() {
   }, [nombre, apellido, email, descripcion]);
 
   return (
-    <div id="contacto" className="flex flex-col justify-center items-center p-4 pt-12 h-screen">
+    <div id="contacto" className="z-10 flex flex-col justify-center items-center pt-64 pb-64 h-screen">
       <div className="bg-white md:px-6 pt-2 md:pt-10 md:pb-6 w-full max-w-4xl">
-        <p className="md:pb-4 font-semibold text-center text-xl md:text-xl">Horario de atención por consultas de 13hs a 17hs</p>
+        <div className="pb-12">
+          <p className="pb-8 md:pb-4 font-semibold text-center text-xl md:text-xl">Horario de atención por consultas de 13hs a 17hs</p>
+        </div>
         <div className="flex lg:flex-row flex-col">
           <div className={`mt-2 lg:mt-0 lg:mr-2 w-full lg:w-1/2 bg-cover bg-center ${isSend ? "bg-[url('/imgs/contacto/contacto_ok.webp')]" : "bg-[url('/imgs/contacto/contacto.webp')]"}`}>
           </div>
