@@ -82,8 +82,8 @@ const Navbar: React.FC<NavbarProps> = ({ variant }) => {
   const { logo, links } = navData[variant];
 
   const navStyles = {
-    home: 'fixed bg-[#1976D2] w-full text-[#fff] z-50',
-    feature: 'fixed bg-[#001F3F] w-full text-[#fff] z-50',
+    home: 'bg-[#f4f3f3] w-full text-[#1f265a] z-50 font-bold text-center',
+    feature: 'bg-[#f4f3f3] w-full text-[#1f265a] z-50',
   };
 
   const toggleMenu = () => {
@@ -94,18 +94,14 @@ const Navbar: React.FC<NavbarProps> = ({ variant }) => {
     <nav className={`${navStyles[variant]}`}>
       <div className="mx-auto px-4 lg:px-6 container">
         <div className="flex justify-between items-center h-14">
-          <Link href={logo.href} className="flex items-center">
-            <Image src={logo.icon} alt="Logo" width={32} height={32} className="w-8 h-8" />
-            <span className="ml-2 font-bold text-lg sm:text-xl lg:text-2xl">{logo.text}</span>
-          </Link>
-          <div className="lg:flex space-x-4 hidden">
+
+          <div className="hidden lg:flex space-x-4">
             {links.map((link) => (
-              <Link 
-                key={link.href} 
-                href={link.href} 
-                className={`text-sm lg:text-base hover:underline py-2 px-3 ${
-                  activeLink === link.href ? 'bg-opacity-20 bg-black border-b-2 border-white' : ''
-                }`}
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`text-sm lg:text-base hover:underline py-2 px-3 ${activeLink === link.href ? 'bg-opacity-20 bg-black border-b-2 border-white' : ''
+                  }`}
               >
                 {link.text}
               </Link>
@@ -123,9 +119,8 @@ const Navbar: React.FC<NavbarProps> = ({ variant }) => {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`block hover:bg-[#5a7290] px-3 py-2 rounded-md font-medium text-sm hover:text-white ${
-                  activeLink === link.href ? 'bg-opacity-20 bg-black border-b-2 border-white' : ''
-                }`}
+                className={`block hover:bg-[#5a7290] px-3 py-2 rounded-md font-medium text-sm hover:text-white ${activeLink === link.href ? 'bg-opacity-20 bg-black border-b-2 border-white' : ''
+                  }`}
                 onClick={() => {
                   toggleMenu();
                   setActiveLink(link.href);
