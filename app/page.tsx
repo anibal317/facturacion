@@ -19,7 +19,6 @@ export default function Home() {
           <MainFeature />
           <Clients />
           <Contacto />
-          <Whatsapp phoneNumber="2314405020" positionX="40px" positionY="50px" />
         </main>
       </div>
     </Layout>
