@@ -8,7 +8,7 @@ const Header = () => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchClients = async () => {
+    const fetchLogoData = async () => {
       try {
         const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/navigation`);
         if (!response.ok) {
@@ -21,7 +21,7 @@ const Header = () => {
       }
     };
 
-    fetchClients();
+    fetchLogoData();
   }, []);
 
   return (
