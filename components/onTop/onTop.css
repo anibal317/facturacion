@@ -1,0 +1,10 @@
+.onTop {
+    position: fixed;
+    text-decoration: none;
+    z-index: 2;
+  }
+  
+  .onTop-icon {
+    color: #25D366; /* Color verde de WhatsApp */
+    fill: black;
+  }

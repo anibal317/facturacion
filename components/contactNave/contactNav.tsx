@@ -6,6 +6,11 @@ const ContactNavbar = () => {
   const [data, setLogo] = useState<Object | null>(null);
   const [error, setError] = useState<string | null>(null);
 
+  const safeData = data || { 
+  facebookLink: '', 
+  instagramLink: '', 
+};
+
   useEffect(() => {
     const fetchSettings = async () => {
       try {
@@ -76,12 +81,12 @@ const ContactNavbar = () => {
 
           {/* Facebook */}
           <Link
-            href={data.facebookLink||'/'}
+            href={safeData.facebookLink||'/'}
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-blue-400 transition-colors"
             aria-label="Facebook"
-            hidden={data?.facebookLink === '' ? true : false}
+            hidden={safeData.facebookLink === '' ? true : false}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -95,12 +100,12 @@ const ContactNavbar = () => {
 
           {/* Instagram */}
           <Link
-            href={data.instagramLink||'/'}
+            href={safeData.instagramLink||'/'}
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-pink-500 transition-colors"
             aria-label="Instagram"
-            hidden={data?.instagramLink === '' ? true : false}
+            hidden={safeData.instagramLink === '' ? true : false}
 
           >
             <svg
