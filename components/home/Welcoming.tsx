@@ -1,20 +1,20 @@
-import VideoBackground from "../videoBackground/VideoBackground";
-
 export default function Welcoming() {
-    const videoUrl = '/videos/home/quienes_somos.mp4';
-    const title = "Bienvenidos a Bolivar Software";
-
     return (
-        <section className="scroll-smooth" id="welcoming">
-            <div className="relative flex justify-center items-center w-full h-screen overflow-hidden">
-                <div className="absolute inset-0">
-                    <VideoBackground videoUrl={videoUrl} title={title} />
+        <section className="flex sm:flex-row flex-col scroll-smooth h-[85vh]" id="welcoming">
+            <article className="flex justify-center items-center">
+                <div className="flex flex-col justify-center items-center overflow-hidden w-[60vw]">
+                    <p className="welcomingText">
+                        Somos una empresa de desarrollo de software
+                    </p>
+
+                    <p className="pt-12 welcomingText">
+                        Acompañamos a nuestros clientes en todo el proceso, asegurando el éxito.
+                    </p>
                 </div>
-                <div className="absolute inset-0 bg-black bg-opacity-60" />
-                <p className="relative z-10 px-4 max-w-8xl text-center text-lg text-white md:text-xl lg:text-3xl xl:text-5xl animate-fade-up">
-                    Somos una empresa de desarrollo de software, que acompañamos a nuestros clientes en todo el proceso.
-                </p>
-            </div>
+            </article>
+            <article className="flex justify-center items-center">
+                <img src='/welcoming.png' />
+            </article>
         </section>
     );
 }

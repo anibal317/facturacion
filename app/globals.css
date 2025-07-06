@@ -6,6 +6,8 @@
     html {
         scroll-behavior: smooth;
     }
-
+.welcomingText{
+    @apply font-bold text-[#1b2358] text-3xl lg:text-7xl text-center uppercase animate-fade-up
+}
 
 }
