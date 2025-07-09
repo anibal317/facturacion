@@ -1,6 +1,6 @@
 export default function Welcoming() {
     return (
-        <section className="flex sm:flex-row flex-col scroll-smooth h-[85vh]" id="welcoming">
+        <section className="flex sm:flex-row flex-col scroll-smooth h-[100vh]" id="welcoming">
             <article className="flex justify-center items-center">
                 <div className="flex flex-col justify-center items-center overflow-hidden w-[60vw]">
                     <p className="welcomingText">
@@ -13,7 +13,7 @@ export default function Welcoming() {
                 </div>
             </article>
             <article className="flex justify-center items-center">
-                <img src='/welcoming.png' />
+                <img src='/welcoming.png' className="h-[70%] md:h-auto"/>
             </article>
         </section>
     );
