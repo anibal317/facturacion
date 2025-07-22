@@ -13,42 +13,55 @@ export default function Benefits() {
     const fetchBenefits = async () => {
       try {
         const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/benefits?sec=home`);
-        if (!response.ok) {
-          throw new Error("Error fetching benefits");
-        }
+        if (!response.ok) throw new Error("Error al cargar beneficios");
         const data = await response.json();
-        setBenefits(data.data); // Asumiendo que el endpoint devuelve un array de beneficios
+        setBenefits(data.data);
       } catch (error: any) {
         setError(error.message);
       } finally {
         setLoading(false);
       }
     };
-
     fetchBenefits();
   }, []);
 
-  if (loading) return <div className="text-center">Cargando...</div>;
-  if (error) return <div>Error: {error}</div>;
+  if (loading) return (
+    <section className="py-8 px-4">
+      <div className="text-center">Cargando beneficios...</div>
+    </section>
+  );
+
+  if (error) return (
+    <section className="py-8 px-4">
+      <div className="text-center text-red-500">Error: {error}</div>
+    </section>
+  );
 
   return (
-    <section id="benefits" className="relative flex flex-col justify-center items-center py-16 lg:py-24">
-      <div className="absolute inset-0 bg-[url('/backgrounds/circuit-board.svg')] bg-no-repeat-y w-full h-full" />
-      <div className="relative mx-auto px-4 container">
-
-        <h2 className="mb-12 font-bold text-3xl text-center lg:text-4xl">Nuestros Beneficios</h2>
-        <div className="justify-center items-center gap-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
-          {benefits.map((benefit: Feature, index) => (
-            <FeatureCard
-              key={index}
-              icon={benefit.icon}
-              title={benefit.title}
-              description={benefit.description}
-              isStrikethrough={benefit.isStrikethrough}
-              className="hover:bg-opacity-100 transition-all duration-300"
-            />
-          ))}
-        </div>
+    <section id="benefits" className="flex sm:flex-row flex-col scroll-smooth lg:h-[100svh] md:mt-32">
+      <div className="mt-14 md:mt-20 mx-auto w-full max-w-7xl ">
+        <h2 className="mb-6 text-4xl font-bold uppercase text-center text-[#1b2358] sm:text-3xl md:mb-8 md:text-4xl lg:text-5xl">
+          Nuestros Beneficios
+        </h2>
+        
+        {benefits.length === 0 ? (
+          <div className="text-center text-gray-500 py-8">
+            No hay beneficios disponibles actualmente
+          </div>
+        ) : (
+          <div className="lg:grid lg:grid-cols-3 lg:gap-4 sm:grid-cols-2 sm:gap-6 flex flex-col items-center">
+            {benefits.map((benefit, index) => (
+              <div key={`benefit-${index}`} className="w-[90vw] lg:w-full my-2">
+                <FeatureCard
+                  icon={benefit.icon}
+                  title={benefit.title}
+                  description={benefit.description}
+                  isStrikethrough={benefit.isStrikethrough}
+                />
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

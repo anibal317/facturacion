@@ -2,9 +2,9 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import {  useEffect, useState } from 'react';
-
+import { headerLogo } from '@/types/headerLogo'; // Asegúrate de que la ruta sea correcta
 const Header = () => {
-  const [data, setLogo] = useState<Object | null>(null);
+  const [data, setLogo] = useState<headerLogo | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -31,8 +31,8 @@ const Header = () => {
         <div className="flex flex-row flex-shrink-0 justify-center items-center">
           <Link href="/">
             <Image
-              src={data?.logoIcon} // Reemplaza con la ruta de tu logo
-              alt={data?.logoText}
+              src={data?.logoIcon||'/'} // Reemplaza con la ruta de tu logo
+              alt={data?.logoText||'/'}
               width={120}
               height={40}
               className="w-auto h-10"

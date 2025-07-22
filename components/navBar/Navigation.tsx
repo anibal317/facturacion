@@ -92,7 +92,7 @@ const Navbar: React.FC<NavbarProps> = ({ variant }) => {
 
   return (
     <nav className={`${navStyles[variant]}`}>
-      <div className="mx-auto px-4 lg:px-6 container">
+      <div className="mx-auto px-4 lg:px-6 flex items-center justify-center">
         <div className="flex justify-between items-center h-14">
 
           <div className="hidden lg:flex space-x-4">
@@ -100,7 +100,7 @@ const Navbar: React.FC<NavbarProps> = ({ variant }) => {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm lg:text-base hover:underline py-2 px-3 ${activeLink === link.href ? 'bg-opacity-20 bg-black border-b-2 border-white' : ''
+                className={`text-md lg:text-xl hover:underline py-2 px-3 ${activeLink === link.href ? 'bg-opacity-20 bg-black border-b-2 border-white' : ''
                   }`}
               >
                 {link.text}

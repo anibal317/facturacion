@@ -18,18 +18,7 @@ export function FeatureCard({ icon, title, description, color, isStrikethrough, 
     <Card className={className}>
       <CardHeader>
         <div className="flex justify-center">
-          {IconComponent ? (
-            <div className={isStrikethrough ? 'relative' : ''}>
-              <IconComponent className={`h-12 w-12 ${color}`} />
-              {isStrikethrough && (
-                <div className="absolute inset-0 flex justify-center items-center">
-                  <div className="bg-current w-full h-0.5 font-semibold text-lg text-red-500 transform rotate-45"></div>
-                </div>
-              )}
-            </div>
-          ) : (
-            <div className={`h-12 w-12 ${color} ${isStrikethrough ? 'line-through' : ''}`}>{icon}</div>
-          )}
+          <img src={`../${icon}`} className={`h-24 w-24 ${color}`} alt="" />
         </div>
         <CardTitle className="text-center">
           {title}

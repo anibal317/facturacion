@@ -25,8 +25,26 @@ export default function Carousel({ images, speed = 50 }: CarouselProps) {
         const container = containerRef.current
         if (!container) return
 
-        const imageWidth = 350 // Ancho de cada imagen
-        const totalWidth = images.length * imageWidth
+        // Función para determinar el ancho de imagen según el viewport
+        const getImageWidth = () => {
+            return window.innerWidth < 1024 ? 170 : 350 // 1024px es el breakpoint de lg en Tailwind
+        }
+
+        // Función para calcular el ancho total
+        const calculateTotalWidth = () => {
+            const imageWidth = getImageWidth()
+            return images.length * imageWidth
+        }
+
+        let totalWidth = calculateTotalWidth()
+
+        // Manejador de resize para recalcular el ancho total
+        const handleResize = () => {
+            totalWidth = calculateTotalWidth()
+        }
+
+        // Agregar listener para resize
+        window.addEventListener('resize', handleResize)
 
         const animate = () => {
             setTranslateX(prev => {
@@ -51,10 +69,10 @@ export default function Carousel({ images, speed = 50 }: CarouselProps) {
         <div className="relative h-[200px] lg:h-[380px] overflow-hidden">
             {/* Capa izquierda con blur */}
             <div className="top-0 left-0 z-10 absolute bg-gradient-to-r from-white to-transparent w-28 h-full pointer-events-none" style={{ backdropFilter: 'blur(0px)' }} />
-            
+
             {/* Capa derecha con blur */}
             <div className="top-0 right-0 z-10 absolute bg-gradient-to-l from-white to-transparent w-28 h-full pointer-events-none" style={{ backdropFilter: 'blur(0px)' }} />
-            
+
             <div
                 ref={containerRef}
                 className="flex items-center transition-transform duration-100 ease-linear"

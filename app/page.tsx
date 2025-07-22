@@ -6,7 +6,6 @@ import WhatCanDo from "@/components/home/WhatCanDo";
 import Layout from "@/components/layout/Layout"
 import MainFeature from "@/components/mainFeature/MainFeature";
 import OnTop from "@/components/onTop/onTop";
-import Whatsapp from "@/components/Whatsapp/Whatsapp";
 
 export default function Home() {
 
@@ -21,7 +20,6 @@ export default function Home() {
           <Clients />
           <Contacto />
           <OnTop positionX="3rem" positionY="3rem" showThreshold={100} />
-
         </main>
       </div>
     </Layout>
