@@ -1,11 +1,15 @@
 'use client';
 import Link from 'next/link';
 import Image from 'next/image';
-import {  useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { headerLogo } from '@/types/headerLogo'; // Asegúrate de que la ruta sea correcta
+import { usePathname } from 'next/navigation';
+
+
 const Header = () => {
   const [data, setLogo] = useState<headerLogo | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const pathname = usePathname();
 
   useEffect(() => {
     const fetchLogoData = async () => {
@@ -23,7 +27,9 @@ const Header = () => {
 
     fetchLogoData();
   }, []);
-
+  const logoPath = pathname?.includes('products/invoices')
+    ? `../${data?.logoIcon || '/'}`
+    : data?.logoIcon || '/';
   return (
     <header className="bg-[#3871c1] shadow-sm px-6 py-4">
       <div className="flex justify-between items-center mx-auto max-w-7xl">
@@ -31,8 +37,8 @@ const Header = () => {
         <div className="flex flex-row flex-shrink-0 justify-center items-center">
           <Link href="/">
             <Image
-              src={data?.logoIcon||'/'} // Reemplaza con la ruta de tu logo
-              alt={data?.logoText||'/'}
+              src={logoPath || '/'} // Reemplaza con la ruta de tu logo
+              alt={data?.logoText || '/'}
               width={120}
               height={40}
               className="w-auto h-10"
@@ -57,7 +63,7 @@ const Header = () => {
         {/* Botón PLANES alineado a la derecha */}
         <div className="flex-shrink-0">
           <Link
-            href="/planes"
+            href="/products/invoices#precios"
             className="bg-white hover:bg-gray-100 px-6 py-2 border-2 border-black rounded-none font-bold text-black transition-colors"
           >
             PLANES

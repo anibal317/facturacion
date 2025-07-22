@@ -83,7 +83,7 @@ const Navbar: React.FC<NavbarProps> = ({ variant }) => {
 
   const navStyles = {
     home: 'bg-[#f4f3f3] w-full text-[#1f265a] z-50 font-bold text-center',
-    feature: 'bg-[#f4f3f3] w-full text-[#1f265a] z-50',
+    feature: 'bg-[#f4f3f3] w-full text-[#1f265a] z-50 font-bold text-center' // Updated to match home
   };
 
   const toggleMenu = () => {
