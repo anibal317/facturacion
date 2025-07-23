@@ -52,52 +52,50 @@ const FeatureSection: React.FC = () => {
     const midpoint = Math.ceil(features.length / 2);
 
     const renderAccordionColumn = (columnEntries: Section[]) => (
-        <div className="mt-5 w-full">
-            <Accordion type="single" collapsible className="w-full">
-                {columnEntries.map((details, index) => (
-                    <AccordionItem key={details.id} value={`item-${index + 1}`}>
-                        <AccordionTrigger className="font-semibold text-lg">
-                            {details.title}
-                        </AccordionTrigger>
-                        <AccordionContent>
-                            <Card>
-                                <CardHeader>
-                                    <CardTitle>{details.title}</CardTitle>
-                                    <CardDescription>{details.description}</CardDescription>
-                                </CardHeader>
-                                <CardContent>
-                                    <ul className="space-y-2 list-disc">
-                                        {details.items.map((item) => (
-                                            <li key={item.id}>
-                                                {item.text}
-                                                {item.children.length > 0 && (
-                                                    <ul className="ml-4 list-disc">
-                                                        {item.children.map((subItem) => (
-                                                            <li key={subItem.id}>{subItem.text}</li>
-                                                        ))}
-                                                    </ul>
-                                                )}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                    {details.video && (
-                                        <div className="flex justify-center items-center gap-1">
-                                            <Button
-                                                onClick={() => openVideoModal(details.videoLink)}
-                                                className="mt-4"
-                                                variant="outline"
-                                            >
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className="text-red-600 fill-current"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path></svg> Ver Video
-                                            </Button>
-                                        </div>
-                                    )}
-                                </CardContent>
-                            </Card>
-                        </AccordionContent>
-                    </AccordionItem>
-                ))}
-            </Accordion>
-        </div>
+        <Accordion type="single" collapsible className="w-full">
+            {columnEntries.map((details, index) => (
+                <AccordionItem key={details.id} value={`item-${index + 1}`}>
+                    <AccordionTrigger className="font-semibold text-2xl">
+                        {details.title}
+                    </AccordionTrigger>
+                    <AccordionContent>
+                        <Card>
+                            <CardHeader>
+                                {/* <CardTitle>{details.title}</CardTitle> */}
+                                {/* <CardDescription>{details.description}</CardDescription> */}
+                            </CardHeader>
+                            <CardContent>
+                                <ul className="space-y-2 list-disc">
+                                    {details.items.map((item) => (
+                                        <li key={item.id}>
+                                            {item.text}
+                                            {item.children.length > 0 && (
+                                                <ul className="ml-4 list-disc">
+                                                    {item.children.map((subItem) => (
+                                                        <li key={subItem.id}>{subItem.text}</li>
+                                                    ))}
+                                                </ul>
+                                            )}
+                                        </li>
+                                    ))}
+                                </ul>
+                                {details.video && (
+                                    <div className="flex justify-center items-center gap-1">
+                                        <Button
+                                            onClick={() => openVideoModal(details.videoLink)}
+                                            className="mt-4"
+                                            variant="outline"
+                                        >
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className="text-red-600 fill-current"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path></svg> Ver Video
+                                        </Button>
+                                    </div>
+                                )}
+                            </CardContent>
+                        </Card>
+                    </AccordionContent>
+                </AccordionItem>
+            ))}
+        </Accordion>
     );
 
     const openVideoModal = (videoLink: string) => {
@@ -106,10 +104,10 @@ const FeatureSection: React.FC = () => {
     };
 
     return (
-        <section id='featureSection' className="flex flex-col justify-center items-center pt-16 pb-16 divide-y divide-dashed">
-            <div className="mx-auto px-4 container">
-                <h2 className="mb-12 font-bold text-3xl text-center sm:text-5xl tracking-tighter">Funcionalidades</h2>
-                <div className="mx-auto px-4 py-8 w-full max-w-7xl">
+        <section id='featureSection' className="flex flex-col bg-[#2f3d98] text-white justify-center items-center divide-y divide-dashed w-screen h-[100svh]">
+            <div className="flex flex-col items-center">
+                <h2 className="font-bold text-3xl text-center sm:text-5xl tracking-tighter uppercase ">Funcionalidades</h2>
+                <div className="mt-28 w-[100svh] h-auto">
                     <div className="gap-8 grid grid-cols-1 md:grid-cols-2">
                         {renderAccordionColumn(features.slice(0, midpoint))}
                         {renderAccordionColumn(features.slice(midpoint))}

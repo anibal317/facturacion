@@ -17,7 +17,7 @@ export function FeatureCard({ icon, title, description, color, isStrikethrough, 
   return (
     <Card className={className}>
       <CardHeader>
-        <div className="flex justify-center">
+        <div className="flex  justify-center items-center">
           <img src={`../${icon}`} className={`h-24 w-24 ${color}`} alt="" />
         </div>
         <CardTitle className="text-center">

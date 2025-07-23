@@ -34,9 +34,7 @@ export default function Page() {
             <section>
                 <MainSection />
                 <MainFeatures />
-                <div id="precios">
-                    <PricingSection />
-                </div>
+                <PricingSection />
                 <FeatureSection />
                 <Faqs />
                 <Contacto />
