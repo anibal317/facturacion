@@ -37,7 +37,9 @@ export default function Page() {
                 <PricingSection />
                 <FeatureSection />
                 <Faqs />
-                <Contacto />
+                <div className='mt-64 p-4 '>
+                    <Contacto />
+                </div>
             </section>
             <OnTop positionX="3rem" positionY="3rem" showThreshold={100} />
         </Layout>

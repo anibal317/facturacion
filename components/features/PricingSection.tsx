@@ -53,11 +53,10 @@ export default function PricingSection() {
   }
 
   return (
-    <section id="precios" className="flex justify-center py-12 md:py-24 lg:py-20 w-full h-[300svh] lg:h-[120svh] mt-[25rem]">
+    <section id="precios" className="flex justify-center py-12 md:py-24 lg:py-20 w-full h-[300svh] lg:h-[120svh] mt-[25rem] md:mb-[52rem]">
       <div className="mx-auto px-4">
         <h2 className="mb-12 font-bold text-3xl text-center sm:text-5xl tracking-tighter uppercase">Nuestos Planes</h2>
-        <div className=" gap-3 lg:gap-12 xs:gap-6 grid md:grid-cols-2 lg:grid-cols-3">
-
+        <div className="flex flex-col flex-wrap lg:flex-row justify-center gap-3 lg:gap-12 xs:gap-6 items-center">
           {plans.map((plan: PricingPlan) => (
             <PricingCard key={plan.id} plan={plan} />
           ))}

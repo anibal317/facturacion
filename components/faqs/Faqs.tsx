@@ -44,8 +44,8 @@ export default function Faqs() {
     if (error) return <div>Error: {error}</div>;
 
     return (
-        <section id="faqs" className="relative flex justify-center items-center bg-gradient-to-r from-white to-blue-50  pb-16 divide-y divide-dashed w-full h-[100svh]">
-            <div className="relative mx-auto px-4 max-w-7xl container">
+        <section id="faqs" className="relative flex justify-center items-center w-full h-[100svh] mt-96 md:p-4">
+            <div className="relative mx-auto px-4 max-w-7xl container ">
                 <h2 className="mb-12 font-bold text-3xl text-center sm:text-5xl tracking-tighter uppercase">Preguntas Frecuentes</h2>
                 <Accordion type="single" collapsible className="w-full">
                     {faqs.map((faq) => (
