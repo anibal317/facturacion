@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Facturación - Next.js
 
-## Getting Started
+Este proyecto es una aplicación de facturación desarrollada con [Next.js](https://nextjs.org), utilizando TypeScript, Tailwind CSS y varias integraciones modernas.
 
-First, run the development server:
+## Estructura del Proyecto
+
+- `/app`: Páginas principales y rutas (ej. `products/invoices`, `contact`, etc.).
+- `/components`: Componentes reutilizables (ej. `MainFeatures`, `Benefits`, `Contacto`, etc.).
+- `/data`: Datos estáticos y mockups.
+- `/public`: Recursos estáticos (imágenes, íconos).
+- `/api`: Endpoints internos para navegación, planes, beneficios, etc.
+
+## Funcionalidades
+
+- **Facturación y gestión de productos**: Página de facturas y productos.
+- **Página de contacto**: Formulario con integración EmailJS.
+- **Planes y beneficios**: Visualización dinámica desde APIs internas.
+- **Animaciones y UI moderna**: Usando Tailwind CSS y animaciones.
+- **Alertas**: Integración con SweetAlert para notificaciones.
+
+## Tecnologías
+
+- [Next.js](https://nextjs.org)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [EmailJS](https://www.emailjs.com/) (envío de correos desde el formulario de contacto)
+- [SweetAlert](https://sweetalert.js.org/) (alertas personalizadas)
+
+## Variables de Entorno
+
+Configura las siguientes variables en tu archivo `.env`:
+
+```env
+EMAILJS_SERVICE_ID=...
+EMAILJS_TEMPLATE_ID=...
+EMAILJS_PUBLIC_KEY=...
+```
+
+## Instalación y Desarrollo
+
+Instala las dependencias:
+
+```bash
+npm install
+```
+
+Ejecuta el servidor de desarrollo:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Despliegue
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Recomendado desplegar en [Vercel](https://vercel.com/). Consulta la [documentación oficial](https://nextjs.org/docs/app/building-your-application/deploying).
 
-## Learn More
+## Contribuir
 
-To learn more about Next.js, take a look at the following resources:
+Las contribuciones son bienvenidas. Abre un issue o pull request para sugerencias y mejoras.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Licencia
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT
